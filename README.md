@@ -1,0 +1,35 @@
+# MYMS
+
+Single-spool filament dryer / feed box, designed in FreeCAD 1.1.4 for printed ABS panels and the owner's 24 V PTC and stainless cup.
+
+For future agents and project context, start with [AGENTS.md](AGENTS.md) and the short [current project handover](docs/PROJECT_STATE.md). Load the linked topic documents as needed; the original planning handover is retained as a marked historical snapshot.
+
+**Current release: mechanical review prototype.** The enclosure, spool mechanism, vent controls, filament guide, and electronics pod have native editable sketch/pad/pocket trees and individual STL exports. Heater mounting and cup saddles are proposed **metal/ceramic hardware**, not ABS print files. Their material selection, fabrication, and thermal performance remain unresolved. Do not energize this assembly until those are resolved and the independent cutoff is fitted and tested.
+
+![Lid open](docs/lid-open.png)
+
+The lid opens on two rear hinges after turning the two front catches by hand. The split filament guide is on the lid; spool bushings remain unchanged. M3 clearance holes are 3.2 mm and heat-set insert pockets are 4.0 mm. The final fastener BOM is deferred.
+
+The owner's normal print workflow is to export selected FreeCAD bodies together as one 3MF and arrange them in Bambu Studio. Individual STLs are optional convenience outputs with suggested print orientations; the native CAD retains assembly placements. No automatic 3MF export or configured Bambu print project is included.
+
+![Cutaway](docs/cutaway.png)
+
+- Open [cad/assembly/MYMS_Prototype.FCStd](cad/assembly/MYMS_Prototype.FCStd).
+- Original hardware models: [Hardware_References.FCStd](cad/assembly/Hardware_References.FCStd), relocated from the former root `myms.FCStd` without changing the CAD contents.
+- [exports/prototype](exports/prototype) contains one STL per printed component, an assembled STEP, and `validation.json`.
+- [docs/BUILD_GUIDE.md](docs/BUILD_GUIDE.md) covers assembly, print orientation, fit testing, and outstanding hardware.
+- [docs/SENSORS_AND_WIRING.md](docs/SENSORS_AND_WIRING.md) shows sensor bodies, retaining ties and wires on the actual mount geometry, and explains the current cable openings.
+- [cad/parameters.json](cad/parameters.json) controls regeneration. Sketch dimensions are fixed locally with editable block constraints. Changing the spreadsheet alone does **not** rebuild the design; edit JSON and regenerate.
+
+```bash
+bash scripts/build.sh             # geometry, STL, STEP, validation
+bash scripts/build.sh --render    # also update FreeCAD opening view and PNGs
+```
+
+The runner uses `/home/heits/tools/freecad`; set `MYMS_FREECAD_APPIMAGE` for another FreeCAD AppImage. It mounts the image temporarily and uses its bundled Python, without installing packages. Rendering needs a working graphical display. Generated geometry and export validation runs without the GUI.
+
+The chamber walls are 240 × 150 mm in plan and 365 mm tall. The closed lid, hinge knuckles and catches reach approximately Z=371.5; the feet reach Z=-6. The rear electronics pod extends to Y=199 and front hardware to approximately Y=-16.5. Allow additional clearance above and behind the box to open the lid. Every printed part fits a 240 × 240 mm envelope in its supplied orientation. STL coordinates are oriented for printing and translated onto Z=0; STEP and FCStd retain assembly positions. A 246 mm envelope check leaves nominal space inside the P1S's 256 mm build volume; brim and excluded-bed regions must still be checked in the slicer. [Bambu P1S specifications](https://store.bblcdn.com/s5/default/78c105c0c92642a99e64b4b0b0f3ca6a.pdf).
+
+No firmware, electrical design, thermal certification, or measured drying performance is included in this mechanical revision.
+
+Shell dimensions describe the current layout; some mounting coordinates depend on this layout and need review when resizing the shell. Spool size, bore, journal clearance, and exit diameter are the intended fit adjustments. The build validates geometry after regeneration.

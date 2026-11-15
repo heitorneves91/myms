@@ -1,0 +1,6 @@
+Sensor body 1: seated without intersection
+Sensor 1: body and wire tie routes clear
+Sensor 1: all three lead/cable paths clear
+Sensor body 2: seated without intersection
+Sensor 2: body and wire tie routes clear
+Sensor 2: all three lead/cable paths clear

@@ -1,0 +1,59 @@
+# Decisions and rationales
+
+Current through the conversation ending with the owner's FreeCAD-to-3MF workflow question, 2026-11-14. Labels below distinguish implemented choices from proposals. The [state summary](PROJECT_STATE.md) identifies current gaps; the [initial planning archive](history/INITIAL_PLANNING_HANDOVER.md) retains all earlier detail.
+
+## Scope, materials and hardware
+
+**D01 — Single spool, active drying and optional feeding; owner goal.** MYMS is an affordable learning/DIY project to rule out moisture as a cause of weak/rough PETG prints. It is not an automatic multi-material changer. Passive storage with closed vents and optional desiccant is a secondary use, not an airtightness claim.
+
+**D02 — Purchased Voolt3D ABS enclosure; owner choice, implemented.** ABS superseded the early PETG enclosure to give more thermal headroom. It does not establish a safe local temperature or allow hot metal contact. PLA/PETG cooling/strength observations from the original filament problem are not proof that moisture caused it.
+
+**D03 — 24 V / 120 W PTC and 24 V / 10 A external PSU; owner-confirmed.** Earlier 100 W heater, 150 W open PSU, and 15 A label interpretations were wrong or superseded. The heater's four wires permit independent fan operation and cooldown. PSU label capacity does not establish connector, wiring or inrush suitability.
+
+**D04 — Horizontal heater/cup low in the box; owner preference, implemented layout.** This avoids the earlier tall vertical stack. Inspection found a 127 mm long cup, not a shallow 95 mm basket. Its real dimensions, plus the spool clearance, drove the present enclosure height. The cup mouth faces the heater and its base is downstream in the current CAD; this is a layout choice, not a measured flow result. No cup cutting or blocked perforations are required by this revision.
+
+**D05 — Recirculate chamber air; owner preference, proposed flow path implemented geometrically.** The owner rejected drawings with an upward jet and no clear return route. The lower partition is intended to separate fan suction from discharge; air can rise around the spool and return to the fan. It has leakage gaps and is not a sealed or flow-validated duct. The outside inlet stays remote from fan suction so outside-air heating does not dominate recirculation.
+
+## Spool, lid and feed path
+
+**D06 — Removable central axle and paired tracks; owner choice, implemented.** This replaced four rollers. The current tracks are on the front/rear walls, with the axle parallel to Y. Rectangular journals prevent axle rotation; spool and bushings rotate around the fixed 12 mm shaft. Bearings are a fallback only if measured pull force is excessive.
+
+**D07 — Replaceable, non-press-fit bushings; explicitly keep unchanged.** Owner described a Bambu standard spool at approximately 200 mm OD and 55 mm bore and requested room for slightly larger spools. CAD allows a 210 mm OD, 75 mm-wide envelope; width is an assumption. The 54.4 mm bushing hub (27.2 mm radius) has 0.6 mm diametral clearance to a 55 mm bore. Its 12.6 mm shaft hole similarly clears the 12 mm axle. The owner likes printing different bushings for other hub sizes and explicitly declined further fit refinement for now. Do not make a press fit or gate unrelated work on a bushing coupon.
+
+**D08 — Easy access without removing lid screws; owner requirement, implemented.** The bolted lid was rejected because spool changes must be easy. Two rear pin hinges stay attached; two front finger-operated turnbuttons rotate to release the lid. A front grip and locating lips help handling/alignment. Latches retain with 0.5 mm clearance; they do not compress a gasket. Hinge pins/leaf attachments still use permanent fasteners. The current result is a hinged lid, not a lift-off lid.
+
+**D09 — Filament exit on the lid near the spool tangent; owner requirement, implemented.** The original upper-rear guide was superseded. A point directly above the axle is not automatically tangential; X=220, Y=75 is near the vertical tangent of a 200 mm spool. Other spool/wound diameters change the angle. The guide is rounded and split, and the matching 2.8 mm slot reaches the lid edge and clears the locating lip. This lets the owner free the filament sideways before lifting the lid rather than unthreading it. Physical feeding/pull force is untested.
+
+**D10 — No purchased PTFE fitting; owner-confirmed.** The owner has no PTFE/bulkhead hardware and intended a small plain filament hole. The printed guide is therefore used without a purchased fitting. Earlier PTFE bulkhead assumptions and the 10.2 mm mounting hole are superseded.
+
+## Vents, fasteners and sensors
+
+**D11 — Adjustable 100 mm² intake and 100 mm² exhaust; experimental, implemented.** Each is simply 20 × 5 mm. This was not calculated from fan pressure, moisture release or target exchange flow. Intake and exhaust are successive restrictions; their areas cannot be added into a 200 mm² flow path. Initial shutters had pivots inside the openings: corrected to solid wall 12 mm beside each slot. The exhaust slot moved slightly to clear a corner batten. Vents are moisture-exchange controls, not heater protection.
+
+**D12 — 3.2 mm M3 clearance/pivot bores; explicit owner dimension, implemented.** The owner has successful PLA/PETG experience with 3.2 mm close-fit holes and preferred them over the initial general 3.4 mm clearance. Explained that clamping, rather than hole friction alone, restrains a bolted joint, but the owner reiterated 3.2 mm for this project. Apply it to pivots as well. ABS fit remains untested; do not silently restore 3.4 mm. Occurrences of 3.4 as a lip coordinate are not screw-hole diameters.
+
+**D13 — Mixed inserts and nuts/washers; owner accepted, implemented receiving geometry.** The initial 2.5 mm pilot holes were intended for screw-forming/tapping, not as insert guides; that scheme was incomplete for machine screws. Owner requested 4 mm insert receiving holes. Current pockets are 4 mm diameter, 5 mm deep by default and 4 mm deep in short carrier bosses. Insert lengths/outer geometry must suit these values. Walls/feet into battens, seam bridges, electronics lid/carrier and latch brackets use inserts; tracks, pod attachment, sensors and hinge leaves use through fasteners where accessible. Nuts and bolt heads are not fully modeled.
+
+**D14 — Final fastener BOM deferred; explicit owner instruction.** Earlier screw lengths/quantities were provisional and predated hinge/latch changes and shorter insert pockets. Do not present that list as a purchase BOM or reuse 6–8 mm receiving engagement in a 5 mm blind pocket. Final lengths must include washers, nut height or insert engagement, and avoid bottoming out.
+
+**D15 — Seam bridges need actual aligned wall holes; bug corrected.** Bridges sit behind Z=135 seams with fixing centers at Z=117 and 153, X=120, front and rear. The initial wall center holes at Z=21 and 347 did not align. They were removed and the correct holes added. Corner-batten joints at Z=190 are staggered from panel seams to tie panels together.
+
+**D16 — Different air and wall-contact sensor mounts; owner-approved improvement, implemented.** One air sensor is held away from the wall on an arm; the other presents its flat face to the wall through a window. A body tie retains the package, a second tie holds insulated cable, and notches clear leads. Illustration exposed blocked cable/tie routes: added an air-mount ear and underside reliefs and lowered wall locators. The wall mount's rear tie follows a U-shaped groove around the window so it does not separate the sensor face from the wall. Yellow ties, black sensor bodies and colored leads in the demo show intent, not pin assignments or exact purchased hardware.
+
+## Mounting and wiring proposals that are not finished
+
+**D17 — Independent heater and cup supports; assistant recommendation, not selected hardware.** The owner bought no mounting hardware, considered fixing PTC tabs directly to ABS, and asked how to join cup and PTC. Recommendation: do not join them; use separate supports. Two unlined pipe clamps with mounting bosses and insulating standoffs could avoid custom metalworking for the cup; separate angle supports could carry the PTC tabs. A 93–99 mm fischer clamp was an architecture example, not a purchase or thermally approved part. See [mounting concept](MOUNTING_CONCEPT.md).
+
+**D18 — Ceramic tubes and integral band/feet are placeholders, not finished insulation.** A continuous metal screw bypasses a ceramic tube thermally. Not all ceramic materials have low thermal conductivity, and electrical insulation does not prove thermal isolation. Prefer separately attached hot/cold fasteners through an appropriate insulating body, verify construction, and measure radiation/convection as well as conduction. The CAD still contains the earlier spacers, bands and partition; do not mistake the recommendation for implemented replacement parts. Their counts are repeated occurrences, not different purchased products.
+
+**D19 — Thermal cutoff selection deferred; explicit owner instruction.** The owner has not purchased it and asked to ignore it for the current mechanical work. Do not repeatedly block independent CAD work to ask for it. This does not establish an operating temperature or remove the unfulfilled protection requirement before powered testing.
+
+**D20 — Dedicated protected wiring passage; recommendation only beyond current openings.** There is a 14 × 8 mm rear chamber opening and two 18 × 8 mm electronics-cover slots. They do not align: present routing loops outside the pod. Owner asked whether to cut tight holes or use vents; response recommended keeping vents independent, protecting insulation at the wall, and using separate strain relief. Proposed next change: matching chamber/pod-base openings through the 8 mm stand-off gap, with liner/grommet/gland and cable anchors. Bundle/connector dimensions are unknown, and no aligned passage has been modeled or specifically approved for implementation yet.
+
+## CAD and export choices
+
+**D21 — Preserve the original reference document; explained to owner.** Assembly reference shapes were copied, but original sketches/features were not. The generated document opens standalone, but regeneration reads `cad/assembly/Hardware_References.FCStd`, and deleting it loses the original modeling history. Keep it. At the owner’s later request, the file was moved from root `myms.FCStd` to `cad/assembly/Hardware_References.FCStd`; its contents and feature history were preserved, and the generator now uses the new path.
+
+**D22 — Positioned bodies, not a joint-based assembly; current implementation.** `Printed_Assembly` is an `App::Part`, with distinct native PartDesign bodies placed by the script. It has no Assembly Workbench joints or solver. Repeated hardware is duplicated geometry rather than linked instances. Explained the tradeoff: simple deterministic layout/checks versus manual-edit convenience. A component library, links and actual assembly joints could improve maintainability, but that refactor was discussed, not requested or implemented.
+
+**D23 — Owner's FreeCAD → one 3MF workflow is valid; latest preference.** Owner normally exports the selected printable bodies together to a single 3MF. STL is not inherently higher quality; equivalent triangulation can represent the same surfaces in either format. Existing STLs were an automated convenience: one per part, suggested print orientation, minimum Z=0. FCStd/STEP preserve assembled placements, so direct 3MF export still needs print orientation/arrangement in the slicer. FreeCAD geometry-only 3MF is distinct from a Bambu Studio project 3MF with printer/filament/process/plate settings. No automatic 3MF exporter or Bambu print profile has been implemented, and STL removal was not requested.

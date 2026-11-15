@@ -1,0 +1,5 @@
+# Owner reference files are preserved; ignore FreeCAD recovery copies.
+*.FCBak
+*.FCStd1
+private/
+__pycache__/

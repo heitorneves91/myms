@@ -1,0 +1,717 @@
+{
+  "mechanism_checks": [
+    "Seam Front_Lower",
+    "Seam Front_Upper",
+    "Seam Rear_Lower",
+    "Seam Rear_Upper",
+    "Corner Corner_00_0 front 21",
+    "Corner Corner_00_0 front 117",
+    "Corner Corner_00_0 front 153",
+    "Corner Corner_00_1 front 347",
+    "Corner Corner_00_0 side 31",
+    "Corner Corner_00_0 side 107",
+    "Corner Corner_00_0 side 163",
+    "Corner Corner_00_1 side 337",
+    "Corner Corner_01_0 front 21",
+    "Corner Corner_01_0 front 117",
+    "Corner Corner_01_0 front 153",
+    "Corner Corner_01_1 front 347",
+    "Corner Corner_01_0 side 31",
+    "Corner Corner_01_0 side 107",
+    "Corner Corner_01_0 side 163",
+    "Corner Corner_01_1 side 337",
+    "Corner Corner_10_0 front 21",
+    "Corner Corner_10_0 front 117",
+    "Corner Corner_10_0 front 153",
+    "Corner Corner_10_1 front 347",
+    "Corner Corner_10_0 side 31",
+    "Corner Corner_10_0 side 107",
+    "Corner Corner_10_0 side 163",
+    "Corner Corner_10_1 side 337",
+    "Corner Corner_11_0 front 21",
+    "Corner Corner_11_0 front 117",
+    "Corner Corner_11_0 front 153",
+    "Corner Corner_11_1 front 347",
+    "Corner Corner_11_0 side 31",
+    "Corner Corner_11_0 side 107",
+    "Corner Corner_11_0 side 163",
+    "Corner Corner_11_1 side 337",
+    "Lid hinge 64",
+    "Frame hinge 64 345",
+    "Frame hinge 64 355",
+    "Lid hinge 74",
+    "Frame hinge 74 345",
+    "Frame hinge 74 355",
+    "Hinge pin 60",
+    "Lid hinge 184",
+    "Frame hinge 184 345",
+    "Frame hinge 184 355",
+    "Lid hinge 194",
+    "Frame hinge 194 345",
+    "Frame hinge 194 355",
+    "Hinge pin 180",
+    "Latch bracket 50 352",
+    "Latch bracket 50 360",
+    "Latch bracket 190 352",
+    "Latch bracket 190 360",
+    "Turnbuttons: 0\u2013180 degrees, sampled every 15 degrees",
+    "Lid: 0\u2013110 degrees, sampled every 5 degrees, latches open",
+    "Intake: 100 mm2 opening, supported pivot, clear at 90 degrees",
+    "Exhaust: 100 mm2 opening, supported pivot, clear at 90 degrees",
+    "Filament side-release route: 2.4 mm probe",
+    "Original 54.4 mm spool bushings unchanged"
+  ],
+  "printed_part_intersections": [],
+  "status": "MECHANICAL REVIEW PROTOTYPE \u2014 NOT THERMALLY VALIDATED",
+  "parts": [
+    {
+      "name": "Rear_Lower",
+      "size_mm": [
+        234.0,
+        132.0,
+        3.0
+      ],
+      "volume_mm3": 92086.73,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Left_Lower",
+      "size_mm": [
+        150.0,
+        132.0,
+        3.0
+      ],
+      "volume_mm3": 59303.49,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Right_Lower",
+      "size_mm": [
+        150.0,
+        132.0,
+        3.0
+      ],
+      "volume_mm3": 59303.49,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Front_Upper",
+      "size_mm": [
+        234.0,
+        230.0,
+        3.0
+      ],
+      "volume_mm3": 161098.09,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Left_Upper",
+      "size_mm": [
+        150.0,
+        230.0,
+        3.0
+      ],
+      "volume_mm3": 103403.49,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Right_Upper",
+      "size_mm": [
+        150.0,
+        230.0,
+        3.0
+      ],
+      "volume_mm3": 103403.49,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Top_Lid",
+      "size_mm": [
+        240.0,
+        162.0,
+        7.0
+      ],
+      "volume_mm3": 117012.52,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_00_0",
+      "size_mm": [
+        12.0,
+        187.0,
+        12.0
+      ],
+      "volume_mm3": 26488.18,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_00_1",
+      "size_mm": [
+        12.0,
+        175.0,
+        12.0
+      ],
+      "volume_mm3": 25074.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_01_0",
+      "size_mm": [
+        12.0,
+        187.0,
+        12.0
+      ],
+      "volume_mm3": 26488.18,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_01_1",
+      "size_mm": [
+        12.0,
+        175.0,
+        12.0
+      ],
+      "volume_mm3": 25074.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_10_0",
+      "size_mm": [
+        12.0,
+        187.0,
+        12.0
+      ],
+      "volume_mm3": 26488.18,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_10_1",
+      "size_mm": [
+        12.0,
+        175.0,
+        12.0
+      ],
+      "volume_mm3": 25074.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_11_0",
+      "size_mm": [
+        12.0,
+        187.0,
+        12.0
+      ],
+      "volume_mm3": 26488.18,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Corner_11_1",
+      "size_mm": [
+        12.0,
+        175.0,
+        12.0
+      ],
+      "volume_mm3": 25074.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Foot_9_9",
+      "size_mm": [
+        16.0,
+        16.0,
+        6.0
+      ],
+      "volume_mm3": 1158.12,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Foot_9_141",
+      "size_mm": [
+        16.0,
+        16.0,
+        6.0
+      ],
+      "volume_mm3": 1158.12,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Foot_231_9",
+      "size_mm": [
+        16.0,
+        16.0,
+        6.0
+      ],
+      "volume_mm3": 1158.12,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Foot_231_141",
+      "size_mm": [
+        16.0,
+        16.0,
+        6.0
+      ],
+      "volume_mm3": 1158.12,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Seam_Bridge_Front",
+      "size_mm": [
+        24.0,
+        60.0,
+        8.0
+      ],
+      "volume_mm3": 11394.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Seam_Bridge_Rear",
+      "size_mm": [
+        24.0,
+        60.0,
+        8.0
+      ],
+      "volume_mm3": 11394.34,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Axle_Track_Left",
+      "size_mm": [
+        36.0,
+        122.0,
+        8.0
+      ],
+      "volume_mm3": 26062.96,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Axle_Track_Right",
+      "size_mm": [
+        36.0,
+        122.0,
+        8.0
+      ],
+      "volume_mm3": 26062.96,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Spool_Axle",
+      "size_mm": [
+        14.0,
+        134.0,
+        12.0
+      ],
+      "volume_mm3": 15146.26,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Spool_Bushing_1",
+      "size_mm": [
+        63.0,
+        63.0,
+        12.0
+      ],
+      "volume_mm3": 27980.97,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Spool_Bushing_2",
+      "size_mm": [
+        63.0,
+        63.0,
+        12.0
+      ],
+      "volume_mm3": 27980.97,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Vent_Shutter_Intake",
+      "size_mm": [
+        40.0,
+        15.0,
+        2.0
+      ],
+      "volume_mm3": 1183.92,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Front_Lower",
+      "size_mm": [
+        234.0,
+        132.0,
+        3.0
+      ],
+      "volume_mm3": 92219.24,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Vent_Shutter_Exhaust",
+      "size_mm": [
+        40.0,
+        15.0,
+        2.0
+      ],
+      "volume_mm3": 1183.92,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Rear_Upper",
+      "size_mm": [
+        234.0,
+        230.0,
+        3.0
+      ],
+      "volume_mm3": 160653.32,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Filament_Exit_Guide",
+      "size_mm": [
+        9.8,
+        10.0,
+        5.0
+      ],
+      "volume_mm3": 163.61,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Hinge_Frame_60",
+      "size_mm": [
+        18.0,
+        31.5,
+        10.5
+      ],
+      "volume_mm3": 2181.88,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Hinge_Lid_60",
+      "size_mm": [
+        9.0,
+        28.5,
+        18.0
+      ],
+      "volume_mm3": 1271.32,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Hinge_Frame_180",
+      "size_mm": [
+        18.0,
+        31.5,
+        10.5
+      ],
+      "volume_mm3": 2181.88,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Hinge_Lid_180",
+      "size_mm": [
+        9.0,
+        28.5,
+        18.0
+      ],
+      "volume_mm3": 1271.32,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Latch_Bracket_50",
+      "size_mm": [
+        18.0,
+        22.5,
+        16.0
+      ],
+      "volume_mm3": 5724.5,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Lid_Latch_50",
+      "size_mm": [
+        18.0,
+        30.0,
+        3.0
+      ],
+      "volume_mm3": 1235.87,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Latch_Bracket_190",
+      "size_mm": [
+        18.0,
+        22.5,
+        16.0
+      ],
+      "volume_mm3": 5724.5,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Lid_Latch_190",
+      "size_mm": [
+        18.0,
+        30.0,
+        3.0
+      ],
+      "volume_mm3": 1235.87,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Electronics_Pod",
+      "size_mm": [
+        132.0,
+        94.0,
+        38.0
+      ],
+      "volume_mm3": 85160.41,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Electronics_Lid",
+      "size_mm": [
+        112.0,
+        94.0,
+        3.0
+      ],
+      "volume_mm3": 30623.49,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Electronics_Carrier",
+      "size_mm": [
+        98.0,
+        68.0,
+        2.0
+      ],
+      "volume_mm3": 12423.66,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Pod_Spacer_57_37",
+      "size_mm": [
+        8.0,
+        8.0,
+        8.0
+      ],
+      "volume_mm3": 337.78,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Pod_Spacer_57_89",
+      "size_mm": [
+        8.0,
+        8.0,
+        8.0
+      ],
+      "volume_mm3": 337.78,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Pod_Spacer_179_37",
+      "size_mm": [
+        8.0,
+        8.0,
+        8.0
+      ],
+      "volume_mm3": 337.78,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Pod_Spacer_179_89",
+      "size_mm": [
+        8.0,
+        8.0,
+        8.0
+      ],
+      "volume_mm3": 337.78,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Sensor_Mount_1",
+      "size_mm": [
+        32.0,
+        20.0,
+        18.0
+      ],
+      "volume_mm3": 2833.84,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Sensor_Mount_2",
+      "size_mm": [
+        28.0,
+        16.0,
+        4.0
+      ],
+      "volume_mm3": 1025.95,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Track_Coupon_30",
+      "size_mm": [
+        32.0,
+        28.0,
+        8.0
+      ],
+      "volume_mm3": 5523.5,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Track_Coupon_50",
+      "size_mm": [
+        32.0,
+        28.0,
+        8.0
+      ],
+      "volume_mm3": 5500.5,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Track_Coupon_70",
+      "size_mm": [
+        32.0,
+        28.0,
+        8.0
+      ],
+      "volume_mm3": 5477.5,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    },
+    {
+      "name": "Base",
+      "size_mm": [
+        240.0,
+        150.0,
+        3.0
+      ],
+      "volume_mm3": 107710.47,
+      "solid_count": 1,
+      "valid": true,
+      "mesh_closed": true
+    }
+  ],
+  "reference_inventory": [
+    {
+      "name": "Body",
+      "label": "MetalDiffuser",
+      "size_mm": [
+        102.82725902777742,
+        102.82725902777742,
+        127.00000000000003
+      ],
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "name": "Body001",
+      "label": "PTC",
+      "size_mm": [
+        88.0,
+        60.0,
+        41.5
+      ],
+      "valid": true,
+      "solids": 1
+    }
+  ],
+  "hardware_print_intersections": []
+}

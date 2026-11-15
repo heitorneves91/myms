@@ -1,0 +1,17 @@
+{
+  "outer_width": 240,
+  "outer_depth": 150,
+  "wall_height": 365,
+  "wall": 3,
+  "panel_split_height": 135,
+  "spool_diameter": 210,
+  "spool_width": 75,
+  "spool_bore": 55,
+  "axle_height": 250,
+  "journal_width": 14.6,
+  "filament_exit_hole": 2.8,
+  "m3_clearance": 3.2,
+  "insert_diameter": 4.0,
+  "insert_depth": 5.0,
+  "carrier_insert_depth": 4.0
+}
