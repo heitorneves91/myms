@@ -1,6 +1,6 @@
 # Decisions and rationales
 
-Current through the conversation ending with the owner's FreeCAD-to-3MF workflow question, 2026-11-14. Labels below distinguish implemented choices from proposals. The [state summary](PROJECT_STATE.md) identifies current gaps; the [initial planning archive](history/INITIAL_PLANNING_HANDOVER.md) retains all earlier detail.
+Updated 2026-11-15 through the enclosure thickness change. Labels below distinguish implemented choices from proposals. The [state summary](PROJECT_STATE.md) identifies current gaps; the [initial planning archive](history/INITIAL_PLANNING_HANDOVER.md) retains all earlier detail.
 
 ## Scope, materials and hardware
 
@@ -13,6 +13,8 @@ Current through the conversation ending with the owner's FreeCAD-to-3MF workflow
 **D04 — Horizontal heater/cup low in the box; owner preference, implemented layout.** This avoids the earlier tall vertical stack. Inspection found a 127 mm long cup, not a shallow 95 mm basket. Its real dimensions, plus the spool clearance, drove the present enclosure height. The cup mouth faces the heater and its base is downstream in the current CAD; this is a layout choice, not a measured flow result. No cup cutting or blocked perforations are required by this revision.
 
 **D05 — Recirculate chamber air; owner preference, proposed flow path implemented geometrically.** The owner rejected drawings with an upward jet and no clear return route. The lower partition is intended to separate fan suction from discharge; air can rise around the spool and return to the fan. It has leakage gaps and is not a sealed or flow-validated duct. The outside inlet stays remote from fan suction so outside-air heating does not dominate recirculation.
+
+**D24 — 10 mm chamber shell; owner choice, implemented.** The owner reported roughly 25% more filament for the 10 mm upper front plate in a Bambu Studio comparison with 5% sparse infill, and chose to thicken the whole chamber shell for insulation. The four split walls, base and lid use 10 mm slabs. The side panels grow inward to retain the 240 × 150 mm footprint and one-piece base and lid. The base grows down and the lid up, preserving the chamber floor and heater/cup mounting heights. Infill and wall loops are set in the slicer. Exterior temperature and energy use remain unmeasured.
 
 ## Spool, lid and feed path
 

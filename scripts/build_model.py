@@ -88,53 +88,68 @@ def finish(b,rot=None):
 
 CR=P['m3_clearance']/2; IR=P['insert_diameter']/2
 W=P['outer_width']; D=P['outer_depth']; H=P['wall_height']; T=P['wall']; S=P['panel_split_height']
+FLOOR_Z=3  # Preserve the chamber floor and heater/cup mounting datum.
+LID_Z=H+T
+CORNER_SIZE=12
+CORNER_CENTER=T+CORNER_SIZE/2
+EXHAUST_X=T+28
+EXHAUST_Z=H-35  # Leave room for the entire shutter below the rear hinge leaf.
 Rfront=A.Rotation(V(1,0,0),90) # local x=x, y=z, extrusion=-y
 Rside=A.Rotation(V(1,1,1),120) # local x=y, y=z, extrusion=x
 
 # Screw-fastened panels; corner battens carry the load and seal the seams.
-for upper,z0,ph in [(False,3,S-3),(True,S,H-S)]:
+for upper,z0,ph in [(False,FLOOR_Z,S-FLOOR_Z),(True,S,H-S)]:
     for rear in (False,True):
-        holes=[(x,z,CR) for x in (6,W-12) for z in (18,ph-18)]
+        holes=[(x-T,z,CR) for x in (CORNER_CENTER,W-CORNER_CENTER) for z in (18,ph-18)]
         holes += [(W/2-T,(S+18 if upper else S-18)-z0,CR)]
         if upper:
             holes += [(x-T,z-S,CR) for x in (W/2-12,W/2+12) for z in (260,315,350)]
         if rear and not upper:
-            holes += [(x-T,z-3,CR) for x in (57,179) for z in (37,89)]
-            holes += [(W-56-T,128-3,CR)]
+            holes += [(x-T,z-z0,CR) for x in (57,179) for z in (37,89)]
+            holes += [(W-56-T,128-z0,CR)]
         if rear and upper: holes += [(34-T,258-S,CR)]
         slots=[]
-        if not upper and not rear: slots=[(W-48,22,20,5)]
-        if upper and rear: slots=[(28,ph-28,20,5)]
+        if not upper and not rear: slots=[(W-45-T,22,20,5)]
+        if upper and rear: slots=[(EXHAUST_X-T,EXHAUST_Z-z0-2.5,20,5)]
         if upper and not rear:
             holes += [(x-T,z-S,CR) for x in (50,190) for z in (352,360)]
         if upper and rear:
             holes += [(x-T,z-S,CR) for x in (64,74,184,194) for z in (345,355)]
-        if not upper and rear: slots += [(25,35,14,8)] # protected low voltage loom exit
+        if not upper and rear: slots += [(28-T,38-z0,14,8)] # protected low voltage loom exit
         b=plate(('Rear' if rear else 'Front')+('_Upper' if upper else '_Lower'),W-2*T,ph,T,holes,slots)
         place(b,(T,D if rear else T,z0),Rfront); finish(b)
     for right in (False,True):
-        holes=[(y,z,CR) for y in (9,D-9) for z in (28,ph-28)]
+        holes=[(y,z,CR) for y in (CORNER_CENTER,D-CORNER_CENTER) for z in (28,ph-28)]
         b=plate(('Right' if right else 'Left')+('_Upper' if upper else '_Lower'),D,ph,T,holes)
         place(b,(W-T if right else 0,0,z0),Rside); finish(b)
 
-floor_holes=[(x,y,CR) for x in (9,W-9) for y in (9,D-9)]
-b=plate('Base',W,D,T,floor_holes); finish(b)
+floor_holes=[(x,y,CR) for x in (CORNER_CENTER,W-CORNER_CENTER) for y in (CORNER_CENTER,D-CORNER_CENTER)]
+b=plate('Base',W,D,T,floor_holes)
+place(b,(0,0,FLOOR_Z-T))
 lid=plate('Top_Lid',W,D+6,T,[(x,D-138,CR) for x in (64,74,184,194)])
 feature(lid,'Finger_Grip',rect(W/2-20,D+4,40,8),0,T)
 # Underside locating lip, deliberately relieved at the four screw battens.
-for i,(x,y,w,h) in enumerate([(20,3.4,80,2),(140,3.4,W-160,2),(20,D-5.4,80,2),(140,D-5.4,W-160,2),(3.4,20,2,D-40),(W-5.4,20,2,D-40)]):
+lip_start=T+17
+lip_near=T+0.4
+lip_far=T+2.4
+lips=[(lip_start,D-lip_far,100-lip_start,2),(140,D-lip_far,W-lip_start-140,2)]
+# Interrupt the rear lip around the hinge mounting washers and nuts.
+for start,end in ((lip_start,59),(79,100),(140,179),(199,W-lip_start)):
+    lips.append((start,lip_near,end-start,2))
+lips += [(x,lip_start,2,D-2*lip_start) for x in (lip_near,W-lip_far)]
+for i,(x,y,w,h) in enumerate(lips):
     feature(lid,'Lip'+str(i),rect(x,y,w,h),T,4)
 # Open slot reaches the right edge and clears the underside locating lip.
 feature(lid,'Guide_Slot',rect(W/2+100,D/2-1.4,W/2-99,2.8),T+4,T+4,True)
 feature(lid,'Guide_Seat',circle(W/2+100,D/2,3),T,T,True)
 # Print outside face down, flip in assembly so the lip enters the chamber.
-place(lid,(0,D,H+T),A.Rotation(V(1,0,0),180)); finish(lid)
+place(lid,(0,D,LID_Z),A.Rotation(V(1,0,0),180)); finish(lid)
 
 # Four full height battens, split with staggered joints relative to panels.
 # Clearance holes match separate, outward-facing 4 mm insert pockets.
-for ix,x in enumerate((T,W-T-12)):
-    for iy,y in enumerate((T,D-T-12)):
-        for iz,(z0,z1) in enumerate(((3,190),(190,H))):
+for ix,x in enumerate((T,W-T-CORNER_SIZE)):
+    for iy,y in enumerate((T,D-T-CORNER_SIZE)):
+        for iz,(z0,z1) in enumerate(((FLOOR_Z,190),(190,H))):
             b=plate('Corner_%d%d_%d'%(ix,iy,iz),12,z1-z0,12)
             # local XY=vertical broad face, local Z=toward chamber depth
             # Machine holes with native cylinders/cuts below using reusable pockets.
@@ -153,11 +168,10 @@ for ix,x in enumerate((T,W-T-12)):
             place(b,(x,y+12,z0),Rfront); finish(b)
 
 # Printed feet provide clearance for base and heater support screw heads.
-for x in (9,W-9):
-    for y in (9,D-9):
-        b=new('Foot_'+str(x)+'_'+str(y))
-        feature(b,'Ring',circle(0,0,8)+circle(0,0,CR),0,6)
-        place(b,(x,y,-6)); finish(b)
+for x,y,_ in floor_holes:
+    b=new(f'Foot_{x:g}_{y:g}')
+    feature(b,'Ring',circle(0,0,8)+circle(0,0,CR),0,6)
+    place(b,(x,y,FLOOR_Z-T-6)); finish(b)
 
 # Front/rear middle seam bridges, one shared backer spans the split.
 for rear in (False,True):
@@ -180,10 +194,12 @@ for right in (False,True):
     finish(b)
 
 b=new('Spool_Axle')
-feature(b,'Shaft',circle(0,0,6),0,D-24)
+axle_shoulder=T+9
+shaft_length=D-2*axle_shoulder
+feature(b,'Shaft',circle(0,0,6),0,shaft_length)
 feature(b,'Lower_Journal',rect(-7,-4,14,8),-4,4)
-feature(b,'Upper_Journal',rect(-7,-4,14,8),D-24,4)
-place(b,(W/2,12,AZ),A.Rotation(V(1,0,0),-90)); finish(b,A.Rotation(V(1,0,0),90))
+feature(b,'Upper_Journal',rect(-7,-4,14,8),shaft_length,4)
+place(b,(W/2,axle_shoulder,AZ),A.Rotation(V(1,0,0),-90)); finish(b,A.Rotation(V(1,0,0),90))
 # Loose rotating bushings. The bore and flange dimensions must match measured spool.
 for i in range(2):
     b=new('Spool_Bushing_'+str(i+1))
@@ -194,55 +210,56 @@ for i in range(2):
 
 # Pivot is on solid wall, 12 mm to the left of each 20 x 5 mm opening.
 for rear in (False,True):
-    slotx=31 if rear else W-45
-    z=H-25.5 if rear else 27.5
+    slotx=EXHAUST_X if rear else W-45
+    z=EXHAUST_Z if rear else 27.5
     pivotx=slotx-12
     b=plate('Vent_Shutter_'+('Exhaust' if rear else 'Intake'),40,15,2,[(4,7.5,CR)])
     place(b,(pivotx-4,D+2 if rear else 0,z-7.5),Rfront); finish(b)
     wall=doc.getObject('Rear_Upper' if rear else 'Front_Lower')
-    feature(wall,'Vent_Pivot',circle(pivotx-T,z-(S if rear else 3),CR),T,T,True)
+    feature(wall,'Vent_Pivot',circle(pivotx-T,z-(S if rear else FLOOR_Z),CR),T,T,True)
     parts[:]=[p for p in parts if p['name']!=wall.Name]; finish(wall)
 
 # Split guide and matching lid slot allow sideways filament removal.
 b=new('Filament_Exit_Guide')
 feature(b,'Flange',circle(0,0,5)+circle(0,0,P['filament_exit_hole']/2),0,2)
-feature(b,'Collar',circle(0,0,2.8)+circle(0,0,P['filament_exit_hole']/2),-3,3)
-feature(b,'Side_Release',rect(0,-1.4,6,2.8),2,5,True)
+feature(b,'Collar',circle(0,0,2.8)+circle(0,0,P['filament_exit_hole']/2),-T,T)
+feature(b,'Side_Release',rect(0,-1.4,6,2.8),2,T+2,True)
 old=b.Tip
 edges=[]
 for i,e in enumerate(old.Shape.Edges,1):
     if hasattr(e.Curve,'Radius') and abs(e.Curve.Radius-P['filament_exit_hole']/2)<0.01:
-        if abs(e.CenterOfMass.z-2)<0.01 or abs(e.CenterOfMass.z+3)<0.01: edges.append('Edge'+str(i))
+        if abs(e.CenterOfMass.z-2)<0.01 or abs(e.CenterOfMass.z+T)<0.01: edges.append('Edge'+str(i))
 f=b.newObject('PartDesign::Fillet','Filament_Guide_Rounds'); f.Base=(old,edges); f.Radius=0.6
 doc.recompute(); old.Visibility=False
-place(b,(W/2+100,D/2,H+T)); finish(b,A.Rotation(V(1,0,0),180))
+place(b,(W/2+100,D/2,LID_Z)); finish(b,A.Rotation(V(1,0,0),180))
 
 # Hinges: two outside rear leaves and interleaved knuckles, permanently pinned.
 for x in (60,180):
+    pin_height=24+T  # Local height above the frame leaf's origin.
     b=plate('Hinge_Frame_'+str(x),18,20,4,[(4,5,CR),(14,5,CR),(4,15,CR),(14,15,CR)])
-    feature(b,'Neck',rect(0,17,5.7,10)+rect(12.3,17,5.7,10),0,4)
-    tube(b,'Outer_Knuckle_A',(0,27,-2),(1,0,0),4.5,CR,5.7)
-    tube(b,'Outer_Knuckle_B',(12.3,27,-2),(1,0,0),4.5,CR,5.7)
-    drill(b,'Pin_Clearance',(0,27,-2),(-1,0,0),CR,18)
+    feature(b,'Neck',rect(0,17,5.7,pin_height-17)+rect(12.3,17,5.7,pin_height-17),0,4)
+    tube(b,'Outer_Knuckle_A',(0,pin_height,-2),(1,0,0),4.5,CR,5.7)
+    tube(b,'Outer_Knuckle_B',(12.3,pin_height,-2),(1,0,0),4.5,CR,5.7)
+    drill(b,'Pin_Clearance',(0,pin_height,-2),(-1,0,0),CR,18)
     place(b,(x,D+4,H-25),Rfront); finish(b)
     b=plate('Hinge_Lid_'+str(x),18,18,3,[(4,6,CR),(14,6,CR)])
     feature(b,'Neck',rect(6.3,18,5.4,6),-1,4)
     tube(b,'Inner_Knuckle',(6.3,24,-1),(1,0,0),4.5,CR,5.4)
     drill(b,'Pin_Clearance',(0,24,-1),(-1,0,0),CR,18)
-    place(b,(x,D-18,H+T)); finish(b,A.Rotation(V(0,1,0),90))
+    place(b,(x,D-18,LID_Z)); finish(b,A.Rotation(V(0,1,0),90))
 
 # Horizontal turnbuttons swing above the lid, so they do not bind on its edge.
 for x in (50,190):
     b=plate('Latch_Bracket_'+str(x),18,18,16)
     # Local x=x, local y=z, local z=-y (front-facing bracket).
-    feature(b,'Pivot_Stand',rect(0,18,18,4.5),7,9)
+    feature(b,'Pivot_Stand',rect(0,18,18,T+1.5),7,9)
     for i,z in enumerate((6,14)):
         drill(b,'Wall_Insert'+str(i),(9,z,0),(0,0,-1),IR,P['insert_depth'])
-    drill(b,'Pivot_Insert',(9,22.5,11.5),(0,1,0),IR,P['insert_depth'])
+    drill(b,'Pivot_Insert',(9,19.5+T,11.5),(0,1,0),IR,P['insert_depth'])
     place(b,(x-9,0,H-19),Rfront); finish(b)
     b=plate('Lid_Latch_'+str(x),12,30,3,[(6,5,CR)])
     feature(b,'Finger_Tab',rect(12,17,6,10),0,3)
-    place(b,(x-6,-16.5,H+3.5)); finish(b)
+    place(b,(x-6,-16.5,LID_Z+0.5)); finish(b)
 
 # External electronics pod. Plain removable carrier avoids guessed PCB hole patterns.
 pod=plate('Electronics_Pod',112,94,3)
@@ -300,6 +317,7 @@ for gap in (0.3,0.5,0.7):
     b=plate('Track_Coupon_'+str(int(gap*100)),32,28,8)
     feature(b,'Slot',rect(16-(14+gap)/2,5,14+gap,24),8,5,True)
     assembly.removeObject(b); coupons.addObject(b); finish(b); b.Visibility=False
+coupons.Visibility=False
 
 # Heat-rated support bolt locations: no ABS heater/cup cradles.
 # These holes accept isolated mounting hardware; exact hardware is not selected.
@@ -307,7 +325,7 @@ floor=doc.getObject('Base')
 thermalholes=[(x,y,CR) for x in (68,78) for y in (21,129)]
 thermalholes += [(x,y,CR) for x in (113,183) for y in (61,89)]
 feature(floor,'Isolated_Support_Holes',sum((circle(x,y,r) for x,y,r in thermalholes),[]),T,T,True)
-parts[:]=[p for p in parts if p['name']!='Base']; finish(floor)
+finish(floor)
 
 # Preserve original parametric source file; reference copies are positioned only here.
 source=A.openDocument(str(ROOT/'cad/assembly/Hardware_References.FCStd'))

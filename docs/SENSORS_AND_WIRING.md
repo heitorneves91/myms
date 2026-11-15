@@ -32,7 +32,7 @@ This illustration revision adds lead-exit notches and improves the tie relief/ea
 
 | Part | Existing opening | Location in assembly |
 | --- | --- | --- |
-| Rear_Lower | 14 × 8 mm rectangular opening | X=28–42, Z=38–46, through the 3 mm rear wall |
+| Rear_Lower | 14 × 8 mm rectangular opening | X=28–42, Z=38–46, through the 10 mm rear wall |
 | Electronics_Lid | Two 18 × 8 mm rectangular slots | X=104–122; one at Z=90–98, one at Z=30–38 |
 
 The chamber opening is to the left of the electronics pod, which spans X=62–174. The pod's wall-facing base has no matching cable opening. Therefore the current route is **out of the chamber, around the outside of the pod, and through a slot in its removable cover**. The CAD does not yet define an enclosed direct passage, a grommet seat, internal cable anchors, or a sealed removable cover for that passage.

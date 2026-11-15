@@ -48,16 +48,16 @@ Before regeneration, inspect `git status`, diffs and any user-edited CAD/source 
 
 ## Relevant verification
 
-The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **60 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe the current revision, not physical tests.
+The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **79 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe geometric checks.
 
 Build checks include:
 
 - BRep validity, one connected solid per exported part, closed mesh, and largest export dimension ≤246 mm. Actual current part bounds fit within 240 × 240 mm in their supplied orientation. Check bed exclusion zones/brims separately.
 - Static solid intersections, allowing exact face contact and small numerical tolerances.
-- Wall/batten and seam insert-axis alignment; hinge mounting/pin and latch bracket bores.
-- Turnbutton travel 0–180°, sampled every 15°; lid travel 0–110°, sampled every 5° with turnbuttons open.
-- Empty 100 mm² vent slots, solid wall around each pivot and clear openings with shutters at 90°.
-- A 2.4 mm probe through the filament side-release path; unchanged original bushing volumes.
+- Shell slab thickness, wall/batten and seam insert-axis alignment, and base/foot, track, hinge and latch fastener alignment.
+- Turnbutton travel 0–180° every 15°, lid travel 0–110° every 5° plus 1–4° with turnbuttons open, and shutter swing 0–90° every 15°.
+- Clear 100 mm² vent passages with shutters at 90° and solid wall around each pivot through the full wall depth.
+- A 2.4 mm probe across the full depth of the filament side-release path, vertical spool loading clearance, axle journal engagement and original bushing volumes.
 
 The demo script checks copied mount shapes against its illustrative sensor bodies, lead/wire paths and tie paths. For its geometry-only checks it supports `MYMS_DEMO_HEADLESS=1` inside FreeCAD's bundled Python. This does not render images or replace the main build checks.
 
@@ -71,4 +71,6 @@ Owner preference: open FreeCAD, select desired printed bodies, export them toget
 
 Existing STL exports are convenience outputs, not a preferred format or a quality improvement over 3MF. `finish()` takes each body's local final shape, applies suggested rotations for selected parts, and translates its bounds to minimum X/Y/Z=0. Main FCStd and STEP keep assembly placements. A direct 3MF export of assembled bodies will therefore need arrangement/orientation; it does not automatically inherit STL rotations. Mesh quality depends on tessellation, not the extension. Current automatic mesh settings are 0.12 mm linear and 0.15 rad angular deflection, absolute.
 
-The repository has no generated 3MF or validated printer/filament/process profile. FreeCAD-exported geometry in a 3MF is different from a Bambu Studio project 3MF that can also preserve slicer settings/plate layout. Do not assume exporting geometry creates a ready-to-print Bambu project.
+The prototype generator does not produce 3MF files or configure printer, filament, or process profiles. A FreeCAD geometry export leaves those settings to Bambu Studio.
+
+The regenerated enclosure uses a 10 mm slab for each chamber wall, the base, and the lid. The new upper front STL is 220 × 230 × 10 mm. Re-export selected bodies from the updated FreeCAD assembly when starting a new Bambu project.

@@ -31,19 +31,23 @@ saved={name:A.Placement(doc.getObject(name).Placement) for name in moving+('Lid_
 def rotate_object(name,point,axis,angle):
     turn=A.Placement(); turn.rotate(A.Vector(*point),A.Vector(*axis),angle)
     doc.getObject(name).Placement=turn.multiply(saved[name])
+lid_top=doc.Top_Lid.Placement.Base.z
+hinge_y=doc.Hinge_Lid_60.Placement.Base.y+24
 for x in (50,190):
-    rotate_object('Lid_Latch_'+str(x),(x,-11.5,368.5),(0,0,1),180)
-for name in moving: rotate_object(name,(0,156,367),(1,0,0),-105)
+    rotate_object('Lid_Latch_'+str(x),(x,-11.5,lid_top+0.5),(0,0,1),180)
+for name in moving: rotate_object(name,(0,hinge_y,lid_top-1),(1,0,0),-105)
 doc.recompute(); view.fitAll(); G.updateGui()
 view.saveImage(str(ROOT/'docs/lid-open.png'),1600,1500,'White')
 for name,placement in saved.items(): doc.getObject(name).Placement=placement
 doc.recompute()
-for name in ('Front_Upper','Front_Lower','Top_Lid','Corner_00_0','Corner_00_1','Corner_10_0','Corner_10_1','Seam_Bridge_Front'):
+cutaway_hidden=('Front_Upper','Front_Lower',*moving,'Corner_00_0','Corner_00_1',
+                'Corner_10_0','Corner_10_1','Seam_Bridge_Front')
+for name in cutaway_hidden:
     doc.getObject(name).Visibility=False
 view.fitAll(); G.updateGui()
 view.saveImage(str(ROOT/'docs/cutaway.png'),1600,1300,'White')
 # Save complete assembly as opening view; cutaway is a separate image.
-for name in ('Front_Upper','Front_Lower','Top_Lid','Corner_00_0','Corner_00_1','Corner_10_0','Corner_10_1','Seam_Bridge_Front'):
+for name in cutaway_hidden:
     doc.getObject(name).Visibility=True
 doc.save()
 print('Saved assembly, open-lid and cutaway previews')

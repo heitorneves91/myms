@@ -1,6 +1,6 @@
 # MYMS — Current Project State
 
-**Updated:** 2026-11-14, through sensor illustrations, cable-routing questions and the FreeCAD/3MF discussion. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
+**Updated:** 2026-11-15, through the 10 mm chamber shell revision. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
 
 ## Read this first
 
@@ -26,22 +26,22 @@ Do not load every document by default. Current owner instructions and focused cu
 - [Original hardware CAD](../cad/assembly/Hardware_References.FCStd): preserve. Renamed and moved from root `myms.FCStd` at the owner’s request; its CAD contents are unchanged. It has the owner's editable heater/cup histories. Main-CAD references copy only final shapes; regeneration still reads the original.
 - [Sensor demo CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd): actual mount copies plus illustrative sensor bodies, ties, leads and screws. It is explanatory reference hardware, not extra printable bodies. The owner explicitly praised this form of demonstration.
 - [Parameters](../cad/parameters.json), [generator](../scripts/build_model.py), [mechanism checks](../scripts/validate_mechanisms.py) and [runner](../scripts/build.sh) reproduce the model. The generated spreadsheet is informational only; changes there do not drive geometry.
-- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed; no reported printed/printed or printed/reference intersections; **60 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
+- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed, with no printed/printed or printed/reference intersections and **79 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
 - Views: [closed](assembly.png), [lid open](lid-open.png), [cutaway](cutaway.png), [sensor demo](sensor-mounts-demo.png). Main CAD saves closed. Sampled motion checks cover lid 0–110 degrees and catches 0–180 degrees, not continuous-motion proof or actual fastener hardware.
 
 ## Geometry and choices to preserve
 
 | Topic | Current state and reason |
 | --- | --- |
-| Enclosure | 240 × 150 mm wall footprint, 3 mm walls, Z=365 wall height. Panels split at Z=135 for printing. Corner-batten joints stagger at Z=190. Keep printability/ABS warping and bed exclusion regions in mind. |
-| Overall allowances | Closed hardware reaches about Z=371.5, feet Z=-6; rear pod Y=199, front catches about Y=-16.5. Leave opening clearance above/behind. The wall footprint is not the full appliance envelope. |
+| Enclosure | 10 mm chamber walls, base and lid. The 240 × 150 mm footprint leaves 220 × 130 mm inside before mounts. The floor top is Z=3, walls end at Z=365, and lid top is Z=375. Panel seams are at Z=135 and batten joints at Z=190. Wall loops and infill are slicer settings. The owner reported roughly 25% more filament for the upper front plate trial at 5% sparse infill. |
+| Overall allowances | Closed hardware reaches Z=378.5, feet Z=-13; rear pod Y=199, front catches about Y=-16.5. Leave opening clearance above and behind. |
 | Spool | Owner: Bambu standard, ~200 mm OD, ~55 mm bore. CAD: 210 mm OD and **assumed 75 mm width** to allow some variation. Width is not a measured owner dimension. |
-| Axle/bushings | Fixed 12 mm axle, rectangular journals, front/rear tracks; 12.6 mm bushing bore, 54.4 mm hub OD (27.2 mm radius). Bushings/spool rotate around the axle. Owner explicitly said keep the current loose fit; different spool hubs can get replacement bushings. |
+| Axle/bushings | Fixed Ø12 mm × 120 mm axle with rectangular journals and front/rear tracks; 12.6 mm bushing bore, 54.4 mm hub OD (27.2 mm radius). Bushings/spool rotate around the axle. Owner explicitly said keep the current loose fit; different spool hubs can get replacement bushings. |
 | Lid | Two permanently attached rear pin hinges, two front finger-operated turnbutton catches, finger grip and locating lips. No screws removed during spool changes. Catches retain with 0.5 mm gap; they are not gasket-compression latches. |
 | Filament | Owner has no PTFE fitting. Rounded split guide on lid at X=220, Y=75, near a 200 mm spool's tangent. Matching 2.8 mm slot exits the right edge and clears the lip so filament can be freed sideways before opening. Previous rear-wall fitting is gone. |
 | Fasteners | **3.2 mm M3 clearance and pivot bores** and **4.0 mm insert-pocket diameter** were explicitly requested. The generator assumes 5 mm pocket depth / 4 mm carrier depth; the owner did not specify those depths. Old 3.4 mm clearances and 2.5 mm pilot scheme are superseded. Inserts coexist with nuts/washers according to access. Final purchasing BOM is deferred. |
 | Seams | Corrected wall/bridge centers at X=120, Z=117 and 153 on front and rear. Old unused middle holes at Z=21 and 347 were removed. |
-| Vents | One 20 × 5 mm opening per intake/exhaust, **100 mm² each**, not an airflow calculation. Shutter pivots moved out of the openings onto solid wall 12 mm away; exhaust shifted to clear a batten. Both open at 90 degrees. |
+| Vents | One 20 × 5 mm opening per intake/exhaust, **100 mm² each**. Pivots sit on solid wall 12 mm from each slot. The exhaust is at X=38–58, Z=327.5–332.5 to clear its batten and hinge. Both shutters open at 90 degrees. |
 | Sensors | `Sensor_Mount_1`: raised air-sensor cradle with body tie and cable tie ear. `Sensor_Mount_2`: flat-face wall-contact window with lead notch and rear U-shaped tie groove that avoids the contact face. Both have lead/tie clearances; individually insulate leads. Illustrative wire colors are not pin assignments. |
 
 ## Heater, cup and unfinished mounting
