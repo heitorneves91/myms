@@ -60,6 +60,20 @@ def new(name):
     b.addProperty('App::PropertyString','ReleaseStatus').ReleaseStatus='PROTOTYPE — measurements and thermal validation pending'
     return b
 
+def funnel(body,name,z0,r0,z1,r1):
+    profiles=[]
+    for i,(z,r) in enumerate(((z0,r0),(z1,r1))):
+        sk=doc.addObject('Sketcher::SketchObject',body.Name+'_'+name+'_Profile'+str(i))
+        body.addObject(sk); sk.Placement.Base.z=z
+        sk.addGeometry(circle(0,0,r)[0],False)
+        sk.addConstraint(Sketcher.Constraint('Block',0)); profiles.append(sk)
+    loft=body.newObject('PartDesign::SubtractiveLoft',body.Name+'_'+name)
+    loft.Profile=profiles[0]; loft.Sections=[profiles[1]]; loft.Ruled=True
+    doc.recompute()
+    for obj in body.Group:
+        if obj!=loft: obj.Visibility=False
+    return loft
+
 def plate(name,w,h,t,holes=(),slots=()):
     b=new(name)
     feature(b,'Plate',rect(0,0,w,h),0,t)
@@ -94,6 +108,7 @@ CORNER_SIZE=12
 CORNER_CENTER=T+CORNER_SIZE/2
 EXHAUST_X=T+28
 EXHAUST_Z=H-35  # Leave room for the entire shutter below the rear hinge leaf.
+EXIT_Z=P['filament_exit_height']
 Rfront=A.Rotation(V(1,0,0),90) # local x=x, y=z, extrusion=-y
 Rside=A.Rotation(V(1,1,1),120) # local x=y, y=z, extrusion=x
 
@@ -121,6 +136,11 @@ for upper,z0,ph in [(False,FLOOR_Z,S-FLOOR_Z),(True,S,H-S)]:
     for right in (False,True):
         holes=[(y,z,CR) for y in (CORNER_CENTER,D-CORNER_CENTER) for z in (28,ph-28)]
         b=plate(('Right' if right else 'Left')+('_Upper' if upper else '_Lower'),D,ph,T,holes)
+        if upper and not right:
+            feature(b,'Guide_Seat',circle(D/2,EXIT_Z-z0,3),T,T,True)
+            feature(b,'Guide_Release_Slot',rect(D/2-1.4,EXIT_Z-z0,2.8,H-EXIT_Z+1),T,T,True)
+            for offset in (-9,9):
+                drill(b,'Guide_Insert_'+str(offset),(D/2+offset,EXIT_Z-z0,0),(0,0,-1),IR,P['insert_depth'])
         place(b,(W-T if right else 0,0,z0),Rside); finish(b)
 
 floor_holes=[(x,y,CR) for x in (CORNER_CENTER,W-CORNER_CENTER) for y in (CORNER_CENTER,D-CORNER_CENTER)]
@@ -139,9 +159,6 @@ for start,end in ((lip_start,59),(79,100),(140,179),(199,W-lip_start)):
 lips += [(x,lip_start,2,D-2*lip_start) for x in (lip_near,W-lip_far)]
 for i,(x,y,w,h) in enumerate(lips):
     feature(lid,'Lip'+str(i),rect(x,y,w,h),T,4)
-# Open slot reaches the right edge and clears the underside locating lip.
-feature(lid,'Guide_Slot',rect(W/2+100,D/2-1.4,W/2-99,2.8),T+4,T+4,True)
-feature(lid,'Guide_Seat',circle(W/2+100,D/2,3),T,T,True)
 # Print outside face down, flip in assembly so the lip enters the chamber.
 place(lid,(0,D,LID_Z),A.Rotation(V(1,0,0),180)); finish(lid)
 
@@ -219,19 +236,25 @@ for rear in (False,True):
     feature(wall,'Vent_Pivot',circle(pivotx-T,z-(S if rear else FLOOR_Z),CR),T,T,True)
     parts[:]=[p for p in parts if p['name']!=wall.Name]; finish(wall)
 
-# Split guide and matching lid slot allow sideways filament removal.
+# Fixed left-wall guide: split opens upward, independently of the hinged lid.
 b=new('Filament_Exit_Guide')
 feature(b,'Flange',circle(0,0,5)+circle(0,0,P['filament_exit_hole']/2),0,2)
+feature(b,'Retaining_Ears',rect(-3,3,6,9)+rect(-3,-12,6,9),0,2)
+feature(b,'Mounting_Holes',circle(0,-9,CR)+circle(0,9,CR),2,2,True)
 feature(b,'Collar',circle(0,0,2.8)+circle(0,0,P['filament_exit_hole']/2),-T,T)
-feature(b,'Side_Release',rect(0,-1.4,6,2.8),2,T+2,True)
+funnel(b,'Outer_Funnel',2,3.0,-T/2+0.5,P['filament_exit_hole']/2)
+funnel(b,'Inner_Funnel',-T,2.3,-T/2-0.5,P['filament_exit_hole']/2)
 old=b.Tip
+assert old.Shape.isValid(), 'Invalid guide funnel geometry'
 edges=[]
 for i,e in enumerate(old.Shape.Edges,1):
-    if hasattr(e.Curve,'Radius') and abs(e.Curve.Radius-P['filament_exit_hole']/2)<0.01:
-        if abs(e.CenterOfMass.z-2)<0.01 or abs(e.CenterOfMass.z+T)<0.01: edges.append('Edge'+str(i))
-f=b.newObject('PartDesign::Fillet','Filament_Guide_Rounds'); f.Base=(old,edges); f.Radius=0.6
+    if hasattr(e.Curve,'Radius'):
+        if (abs(e.Curve.Radius-3)<0.01 and abs(e.CenterOfMass.z-2)<0.01) or (abs(e.Curve.Radius-2.3)<0.01 and abs(e.CenterOfMass.z+T)<0.01): edges.append('Edge'+str(i))
+f=b.newObject('PartDesign::Fillet','Filament_Guide_Rounds'); f.Base=(old,edges); f.Radius=0.2
 doc.recompute(); old.Visibility=False
-place(b,(W/2+100,D/2,LID_Z)); finish(b,A.Rotation(V(1,0,0),180))
+feature(b,'Side_Release',rect(0,-1.4,6,2.8),2,T+2,True)
+place(b,(0,D/2,EXIT_Z),A.Rotation(V(0,1,0),-90))
+finish(b,A.Rotation(V(1,0,0),180))
 
 # Hinges: two outside rear leaves and interleaved knuckles, permanently pinned.
 for x in (60,180):

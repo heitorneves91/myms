@@ -26,7 +26,7 @@ view=G.activeDocument().activeView()
 view.viewAxonometric(); view.fitAll()
 G.updateGui()
 view.saveImage(str(ROOT/'docs/assembly.png'),1600,1300,'White')
-moving=('Top_Lid','Hinge_Lid_60','Hinge_Lid_180','Filament_Exit_Guide')
+moving=('Top_Lid','Hinge_Lid_60','Hinge_Lid_180')
 saved={name:A.Placement(doc.getObject(name).Placement) for name in moving+('Lid_Latch_50','Lid_Latch_190')}
 def rotate_object(name,point,axis,angle):
     turn=A.Placement(); turn.rotate(A.Vector(*point),A.Vector(*axis),angle)

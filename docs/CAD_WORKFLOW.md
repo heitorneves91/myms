@@ -48,7 +48,7 @@ Before regeneration, inspect `git status`, diffs and any user-edited CAD/source 
 
 ## Relevant verification
 
-The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **79 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe geometric checks.
+The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **85 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe geometric checks.
 
 Build checks include:
 
@@ -57,7 +57,7 @@ Build checks include:
 - Shell slab thickness, wall/batten and seam insert-axis alignment, and base/foot, track, hinge and latch fastener alignment.
 - Turnbutton travel 0–180° every 15°, lid travel 0–110° every 5° plus 1–4° with turnbuttons open, and shutter swing 0–90° every 15°.
 - Clear 100 mm² vent passages with shutters at 90° and solid wall around each pivot through the full wall depth.
-- A 2.4 mm probe across the full depth of the filament side-release path, vertical spool loading clearance, axle journal engagement and original bushing volumes.
+- 2.4 mm axial and upward-release probes through the left-wall guide, 1.75 mm filament probes at ±15 degrees, a solid lid across the former port/slot, vertical spool loading clearance, axle journal engagement and original bushing volumes.
 
 The demo script checks copied mount shapes against its illustrative sensor bodies, lead/wire paths and tie paths. For its geometry-only checks it supports `MYMS_DEMO_HEADLESS=1` inside FreeCAD's bundled Python. This does not render images or replace the main build checks.
 
@@ -74,3 +74,7 @@ Existing STL exports are convenience outputs, not a preferred format or a qualit
 The prototype generator does not produce 3MF files or configure printer, filament, or process profiles. A FreeCAD geometry export leaves those settings to Bambu Studio.
 
 The regenerated enclosure uses a 10 mm slab for each chamber wall, the base, and the lid. The new upper front STL is 220 × 230 × 10 mm. Re-export selected bodies from the updated FreeCAD assembly when starting a new Bambu project.
+
+## Display-state recovery
+
+A headless `bash scripts/build.sh` save can omit `GuiDocument.xml`. On this FreeCAD version, reopening that document in the GUI restored containers, bodies and tips hidden despite valid BReps. The owner confirmed that showing them and fitting the view recovered the 10 mm model. Finish a generated revision with `--render`, which restores visibility and saves from the GUI, and verify GUI data exists in the final FCStd. Do not conclude that geometry is missing from a blank viewport or overwrite user edits just to restore visibility.

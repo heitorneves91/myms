@@ -86,8 +86,8 @@ def validate(doc,p):
         open_latches.append(shape)
     checks.append('Turnbuttons: 0–180 degrees, sampled every 15 degrees')
 
-    # Swing lid, moving hinge leaves and guide together about their common pin axis.
-    moving_names=('Top_Lid','Hinge_Lid_60','Hinge_Lid_180','Filament_Exit_Guide')
+    # Swing the lid and its hinge leaves; the filament guide stays on the wall.
+    moving_names=('Top_Lid','Hinge_Lid_60','Hinge_Lid_180')
     moving=[doc.getObject(n) for n in moving_names]
     fixed_bodies=[b for b in bodies if b not in moving and not b.Name.startswith('Lid_Latch_')]
     fixed=fixed_bodies+open_latches
@@ -120,12 +120,29 @@ def validate(doc,p):
         assert opened.common(opening_projection).Volume<0.05
         checks.append(label+': 100 mm2 opening, supported pivot, clear at 90 degrees and through sampled swing')
 
-    # Filament can leave the split eyelet sideways through the full lid thickness.
+    # The guide stays on Left_Upper while the uninterrupted lid opens.
     guide=doc.Filament_Exit_Guide
     guide_center=guide.Placement.Base
-    probe=Part.makeBox(w-guide_center.x+2,2.4,t+6,V(guide_center.x,guide_center.y-1.2,h-4))
-    clear(probe,[doc.Top_Lid,doc.Filament_Exit_Guide],'Filament side-release route')
-    checks.append('Filament side-release route: 2.4 mm probe')
+    assert abs(guide_center.x)<1e-6 and abs(guide_center.z-p['filament_exit_height'])<1e-6
+    probe=Part.makeBox(t+2.2,2.4,h-guide_center.z+2,V(-2.1,guide_center.y-1.2,guide_center.z))
+    clear(probe,[doc.Left_Upper,guide],'Upward filament release with lid open')
+    checks.append('Left-wall filament release: 2.4 mm probe across full wall depth')
+    probe=Part.makeCylinder(1.2,t+2.2,V(-2.1,guide_center.y,guide_center.z),V(1,0,0))
+    clear(probe,[doc.Left_Upper,guide],'Horizontal left-wall filament passage')
+    checks.append('Left-wall filament passage: 2.4 mm axial probe')
+    for offset in (-9,9):
+        bore('Guide retaining screw '+str(offset),(-2.1,guide_center.y+offset,guide_center.z),
+             (1,0,0),2+p['insert_depth'],['Left_Upper','Filament_Exit_Guide'])
+    for angle in (-15,15):
+        theta=math.radians(angle)
+        direction=V(math.cos(theta),0,math.sin(theta))
+        start=V(-3,guide_center.y,guide_center.z+(-3-t/2)*math.tan(theta))
+        probe=Part.makeCylinder(0.875,(t+6)/math.cos(theta),start,direction)
+        clear(probe,[doc.Left_Upper,guide],'Angled filament '+str(angle))
+        checks.append('Left-wall guide: 1.75 mm filament probe at '+str(angle)+' degrees')
+    former_port=Part.makeBox(20,6,t,V(w-30,d/2-3,h))
+    assert abs(former_port.common(doc.Top_Lid.Shape).Volume-former_port.Volume)<0.05
+    checks.append('Lid is solid across former filament port and release slot')
 
     # A full-size spool has a clear vertical loading corridor between the rails.
     spool_width=p['spool_width']

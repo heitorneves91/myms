@@ -8,7 +8,7 @@ For future agents and project context, start with [AGENTS.md](AGENTS.md) and the
 
 ![Lid open](docs/lid-open.png)
 
-The lid opens on two rear hinges after turning the two front catches by hand. The split filament guide is on the lid; spool bushings remain unchanged. M3 clearance holes are 3.2 mm and heat-set insert pockets are 4.0 mm. The final fastener BOM is deferred.
+The lid opens on two rear hinges after turning the two front catches by hand. The split, flared filament guide is on the upper left wall; spool bushings remain unchanged. M3 clearance holes are 3.2 mm and heat-set insert pockets are 4.0 mm. The final fastener BOM is deferred.
 
 The owner's normal print workflow is to export selected FreeCAD bodies together as one 3MF and arrange them in Bambu Studio. Individual STLs are optional convenience outputs with suggested print orientations; the native CAD retains assembly placements. No automatic 3MF export or configured Bambu print project is included.
 

@@ -63,7 +63,13 @@
     "Lid: 0\u2013110 degrees, sampled every 5 degrees plus 1\u20134 degrees, latches open",
     "Intake: 100 mm2 opening, supported pivot, clear at 90 degrees and through sampled swing",
     "Exhaust: 100 mm2 opening, supported pivot, clear at 90 degrees and through sampled swing",
-    "Filament side-release route: 2.4 mm probe",
+    "Left-wall filament release: 2.4 mm probe across full wall depth",
+    "Left-wall filament passage: 2.4 mm axial probe",
+    "Guide retaining screw -9",
+    "Guide retaining screw 9",
+    "Left-wall guide: 1.75 mm filament probe at -15 degrees",
+    "Left-wall guide: 1.75 mm filament probe at 15 degrees",
+    "Lid is solid across former filament port and release slot",
     "Modeled spool clears the enclosure during vertical loading",
     "Axle track Front_Upper 108.0 260",
     "Axle track Front_Upper 108.0 315",
@@ -138,7 +144,7 @@
         230.0,
         10.0
       ],
-      "volume_mm3": 344678.3,
+      "volume_mm3": 344070.74,
       "solid_count": 1,
       "valid": true,
       "mesh_closed": true
@@ -162,7 +168,7 @@
         162.0,
         14.0
       ],
-      "volume_mm3": 379246.0,
+      "volume_mm3": 380030.3,
       "solid_count": 1,
       "valid": true,
       "mesh_closed": true
@@ -447,10 +453,10 @@
       "name": "Filament_Exit_Guide",
       "size_mm": [
         9.8,
-        10.0,
+        24.0,
         12.0
       ],
-      "volume_mm3": 261.97,
+      "volume_mm3": 346.13,
       "solid_count": 1,
       "valid": true,
       "mesh_closed": true

@@ -1,6 +1,6 @@
 # MYMS — Current Project State
 
-**Updated:** 2026-11-15, through the 10 mm chamber shell revision. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
+**Updated:** 2026-11-16, through the left-side filament exit revision. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
 
 ## Read this first
 
@@ -26,7 +26,7 @@ Do not load every document by default. Current owner instructions and focused cu
 - [Original hardware CAD](../cad/assembly/Hardware_References.FCStd): preserve. Renamed and moved from root `myms.FCStd` at the owner’s request; its CAD contents are unchanged. It has the owner's editable heater/cup histories. Main-CAD references copy only final shapes; regeneration still reads the original.
 - [Sensor demo CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd): actual mount copies plus illustrative sensor bodies, ties, leads and screws. It is explanatory reference hardware, not extra printable bodies. The owner explicitly praised this form of demonstration.
 - [Parameters](../cad/parameters.json), [generator](../scripts/build_model.py), [mechanism checks](../scripts/validate_mechanisms.py) and [runner](../scripts/build.sh) reproduce the model. The generated spreadsheet is informational only; changes there do not drive geometry.
-- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed, with no printed/printed or printed/reference intersections and **79 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
+- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed, with no printed/printed or printed/reference intersections and **85 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
 - Views: [closed](assembly.png), [lid open](lid-open.png), [cutaway](cutaway.png), [sensor demo](sensor-mounts-demo.png). Main CAD saves closed. Sampled motion checks cover lid 0–110 degrees and catches 0–180 degrees, not continuous-motion proof or actual fastener hardware.
 
 ## Geometry and choices to preserve
@@ -38,7 +38,7 @@ Do not load every document by default. Current owner instructions and focused cu
 | Spool | Owner: Bambu standard, ~200 mm OD, ~55 mm bore. CAD: 210 mm OD and **assumed 75 mm width** to allow some variation. Width is not a measured owner dimension. |
 | Axle/bushings | Fixed Ø12 mm × 120 mm axle with rectangular journals and front/rear tracks; 12.6 mm bushing bore, 54.4 mm hub OD (27.2 mm radius). Bushings/spool rotate around the axle. Owner explicitly said keep the current loose fit; different spool hubs can get replacement bushings. |
 | Lid | Two permanently attached rear pin hinges, two front finger-operated turnbutton catches, finger grip and locating lips. No screws removed during spool changes. Catches retain with 0.5 mm gap; they are not gasket-compression latches. |
-| Filament | Owner has no PTFE fitting. Rounded split guide on lid at X=220, Y=75, near a 200 mm spool's tangent. Matching 2.8 mm slot exits the right edge and clears the lip so filament can be freed sideways before opening. Previous rear-wall fitting is gone. |
+| Filament | Owner has no PTFE fitting. Rounded, flared split guide fixed to `Left_Upper` at X=0, Y=75, Z=355, near a top tangent of the 200–210 mm spool envelope. A 2.8 mm upward release slot reaches the wall top; open the lid to free filament upward. The lid has no filament hole or release slot. The guide stays fixed during lid motion and is retained by two M3 screws into 4 mm wall insert pockets. |
 | Fasteners | **3.2 mm M3 clearance and pivot bores** and **4.0 mm insert-pocket diameter** were explicitly requested. The generator assumes 5 mm pocket depth / 4 mm carrier depth; the owner did not specify those depths. Old 3.4 mm clearances and 2.5 mm pilot scheme are superseded. Inserts coexist with nuts/washers according to access. Final purchasing BOM is deferred. |
 | Seams | Corrected wall/bridge centers at X=120, Z=117 and 153 on front and rear. Old unused middle holes at Z=21 and 347 were removed. |
 | Vents | One 20 × 5 mm opening per intake/exhaust, **100 mm² each**. Pivots sit on solid wall 12 mm from each slot. The exhaust is at X=38–58, Z=327.5–332.5 to clear its batten and hinge. Both shutters open at 90 degrees. |
@@ -73,3 +73,5 @@ Inspect for manual FreeCAD changes before regenerating: the script replaces the 
 - **Later electrical/firmware/testing:** ESP32 phone web UI with no display, independent fan operation and cooldown, local fault handling, protected 24 V system and physical thermal/drying tests remain plans. Initial 55 °C, perhaps 60 °C, is discussion context, not a validated operating envelope.
 
 When a new owner decision arrives, update its focused rationale and this summary if it changes the state. Keep the original planning archive for historical evidence rather than letting its old uncertainties override confirmed measurements.
+
+The earlier blank-view diagnosis was display-only: the headless-saved FCStd lacked `GuiDocument.xml`, and FreeCAD restored its objects hidden. Showing containers, bodies and tips restored the model without geometry changes. The owner confirmed the recovery worked. Finish generated revisions with a GUI/render save; a later headless build can overwrite that display state again.

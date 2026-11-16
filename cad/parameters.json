@@ -13,5 +13,6 @@
   "m3_clearance": 3.2,
   "insert_diameter": 4.0,
   "insert_depth": 5.0,
-  "carrier_insert_depth": 4.0
+  "carrier_insert_depth": 4.0,
+  "filament_exit_height": 355
 }
