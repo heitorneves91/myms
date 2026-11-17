@@ -1,6 +1,6 @@
 # MYMS — Current Project State
 
-**Updated:** 2026-11-16, through the left-side filament exit revision. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
+**Updated:** 2026-11-17, through the corrected edge-down air-sensor print orientation. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
 
 ## Read this first
 
@@ -26,7 +26,7 @@ Do not load every document by default. Current owner instructions and focused cu
 - [Original hardware CAD](../cad/assembly/Hardware_References.FCStd): preserve. Renamed and moved from root `myms.FCStd` at the owner’s request; its CAD contents are unchanged. It has the owner's editable heater/cup histories. Main-CAD references copy only final shapes; regeneration still reads the original.
 - [Sensor demo CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd): actual mount copies plus illustrative sensor bodies, ties, leads and screws. It is explanatory reference hardware, not extra printable bodies. The owner explicitly praised this form of demonstration.
 - [Parameters](../cad/parameters.json), [generator](../scripts/build_model.py), [mechanism checks](../scripts/validate_mechanisms.py) and [runner](../scripts/build.sh) reproduce the model. The generated spreadsheet is informational only; changes there do not drive geometry.
-- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed, with no printed/printed or printed/reference intersections and **85 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
+- [Exports](../exports/prototype): **52 STL files = 49 assembly bodies + 3 fit coupons**, plus a printed-assembly STEP. Current [validation report](../exports/prototype/validation.json): all exported parts valid, single-solid and closed, with no printed/printed or printed/reference intersections and **86 mechanism-check entries**. [Sensor report](sensor-demo-checks.txt): six additional envelope/tie/lead-route checks. No physical print, fit, heating or drying results have been reported.
 - Views: [closed](assembly.png), [lid open](lid-open.png), [cutaway](cutaway.png), [sensor demo](sensor-mounts-demo.png). Main CAD saves closed. Sampled motion checks cover lid 0–110 degrees and catches 0–180 degrees, not continuous-motion proof or actual fastener hardware.
 
 ## Geometry and choices to preserve
@@ -42,7 +42,7 @@ Do not load every document by default. Current owner instructions and focused cu
 | Fasteners | **3.2 mm M3 clearance and pivot bores** and **4.0 mm insert-pocket diameter** were explicitly requested. The generator assumes 5 mm pocket depth / 4 mm carrier depth; the owner did not specify those depths. Old 3.4 mm clearances and 2.5 mm pilot scheme are superseded. Inserts coexist with nuts/washers according to access. Final purchasing BOM is deferred. |
 | Seams | Corrected wall/bridge centers at X=120, Z=117 and 153 on front and rear. Old unused middle holes at Z=21 and 347 were removed. |
 | Vents | One 20 × 5 mm opening per intake/exhaust, **100 mm² each**. Pivots sit on solid wall 12 mm from each slot. The exhaust is at X=38–58, Z=327.5–332.5 to clear its batten and hinge. Both shutters open at 90 degrees. |
-| Sensors | `Sensor_Mount_1`: raised air-sensor cradle with body tie and cable tie ear. `Sensor_Mount_2`: flat-face wall-contact window with lead notch and rear U-shaped tie groove that avoids the contact face. Both have lead/tie clearances; individually insulate leads. Illustrative wire colors are not pin assignments. |
+| Sensors | `Sensor_Mount_1`: original open arm/cradle layout. Arm and cradle extend from local Y=2 to Y=16, flush with the first pad's long edge, for the owner's edge-down printing orientation. The STL applies that rotation. The earlier filled, base-down pedestal was a misunderstanding and is removed. Sensor seat, mounting hole and tie/wire routes are retained. `Sensor_Mount_2` is unchanged. |
 
 ## Heater, cup and unfinished mounting
 

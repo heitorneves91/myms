@@ -48,12 +48,13 @@ Before regeneration, inspect `git status`, diffs and any user-edited CAD/source 
 
 ## Relevant verification
 
-The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **85 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe geometric checks.
+The last recorded build has **52 valid single-solid printable meshes**, no reported printed/printed or printed/reference volume intersections, and **86 mechanism-check entries**. The sensor demonstration adds **six checks** covering two sensor envelopes, body/wire tie paths and three lead/cable routes per sensor. These counts describe geometric checks.
 
 Build checks include:
 
 - BRep validity, one connected solid per exported part, closed mesh, and largest export dimension ≤246 mm. Actual current part bounds fit within 240 × 240 mm in their supplied orientation. Check bed exclusion zones/brims separately.
 - Static solid intersections, allowing exact face contact and small numerical tolerances.
+- Air-sensor arm/cradle profiles reach the original pad’s Y=16 bed edge, with the original open underside retained.
 - Shell slab thickness, wall/batten and seam insert-axis alignment, and base/foot, track, hinge and latch fastener alignment.
 - Turnbutton travel 0–180° every 15°, lid travel 0–110° every 5° plus 1–4° with turnbuttons open, and shutter swing 0–90° every 15°.
 - Clear 100 mm² vent passages with shutters at 90° and solid wall around each pivot through the full wall depth.

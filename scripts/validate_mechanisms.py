@@ -15,6 +15,15 @@ def validate(doc,p):
     bodies=[b for b in doc.Printed_Assembly.Group if b.TypeId=='PartDesign::Body']
     checks=[]
 
+    # Edge-down printing: the arm/cradle both land on the base pad's Y=16 edge.
+    sensor=doc.Sensor_Mount_1.Tip.Shape
+    for size,origin in (((8,0.5,12),(8,15.5,3)),((18,0.5,3),(14,15.5,15))):
+        contact=Part.makeBox(*size,V(*origin))
+        assert abs(sensor.common(contact).Volume-contact.Volume)<0.05
+    underside=Part.makeBox(14,10,10,V(17,3,4))
+    assert sensor.common(underside).Volume<0.05
+    checks.append('Air mount pads reach Y=16 print edge; open cradle underside preserved')
+
     def clear(shape,targets,label):
         hits=[]
         for obj in targets:

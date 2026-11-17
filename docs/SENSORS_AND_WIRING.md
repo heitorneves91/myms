@@ -10,7 +10,11 @@ The separate [sensor demonstration CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd
 
 ![Air sensor](sensor-mount-1.png)
 
-1. Bolt the base to the wall through its round hole. The support arm holds the sensor away from the wall.
+Print this part **standing on the first pad's long edge**, not flat on its wall-facing surface. Local Y=16 is the common bed edge: both raised pad profiles now extend to it. The open underside is preserved. The STL is already rotated into this orientation.
+
+![Intended edge-down printing orientation](sensor-mount-1-print.png)
+
+1. Bolt the base to the wall through its round hole. The original arm holds the cradle away from the wall.
 2. Lay the sensor body in the recessed seat, with its leads leaving through the notch in the front of the cradle.
 3. Pass a small tie through the two slots beside the sensor, underneath the raised cradle, and back over the sensor body. Tighten gently so the sensor is retained without crushing it. Yellow illustrates the tie.
 4. Insulate the three leads/joints individually and bring the cable down toward the projecting base ear. Use the second tie through that ear to grip insulated cable for strain relief. A rear relief lets the tie pass without lifting the mount away from the wall.
@@ -26,7 +30,7 @@ The separate [sensor demonstration CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd
 
 The sensors are retained by their bodies; do not clamp bare leads or load solder joints. The demonstration checks the modeled sensor envelopes, lead/cable routes and tie routes against the printed mounts. Physical dimensions and tie bend radii still need checking with the actual purchased parts.
 
-This illustration revision adds lead-exit notches and improves the tie relief/ear geometry in the two printed mounts. Their mounting screw positions are unchanged. Main CAD, sensor STLs and previews have been regenerated. Other appliance geometry and cable openings are unchanged.
+The initial 2026-11-17 change incorrectly filled the underside for flat printing; the owner rejected that interpretation and supplied the intended edge-down slicer view. The corrected change restores the original 24 × 16 mm base and open arm/cradle, and extends the two raised pads to Y=16 instead of Y=14. Their mounting position, sensor seat and wire routes are unchanged. The sensor demonstration includes a separate hidden print-orientation group and reference bed; these are not extra print parts. Sensor_Mount_2 and cable openings are unchanged.
 
 ## Current chamber-to-electronics cable route
 

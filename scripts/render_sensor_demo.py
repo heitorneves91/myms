@@ -102,6 +102,16 @@ for n in (1,2):
     group.addProperty('App::PropertyString','AssemblyNotes').AssemblyNotes='References are schematic. Use the correct sensor pinout; insulate each joint. Ties need physical tightening.'
     group.Placement.Base.x=0 if n==1 else 50
 
+print_group=doc.addObject('App::Part','Air_Sensor_Print_Orientation')
+print_shape=source.Sensor_Mount_1.Tip.Shape.copy()
+print_shape.rotate(V(),V(1,0,0),-90)
+bb=print_shape.BoundBox
+print_shape.translate(V(-bb.XMin,-bb.YMin,-bb.ZMin))
+item(print_group,'Air_Mount_Edge_Down',print_shape,(0.83,0.87,0.88),
+     'Print on original pad edge Y=16; same orientation as Sensor_Mount_1.stl')
+item(print_group,'Print_Bed_Reference',Part.makeBox(40,26,0.5,V(-4,-4,-0.5)),(0.36,0.38,0.40),
+     'Reference plane only; do not print')
+print_group.Visibility=False
 A.closeDocument(source.Name)
 doc.recompute()
 (ROOT/'docs/sensor-demo-checks.txt').write_text('\n'.join(evidence)+'\n')
@@ -116,6 +126,13 @@ for i,g in enumerate(groups,1):
 for g in groups: g.Visibility=True
 view.fitAll(); G.updateGui()
 view.saveImage(str(ROOT/'docs/sensor-mounts-demo.png'),1800,1100,'White')
+for g in groups: g.Visibility=False
+print_group.Visibility=True
+view.fitAll(); G.updateGui()
+view.saveImage(str(ROOT/'docs/sensor-mount-1-print.png'),1400,1100,'White')
+print_group.Visibility=False
+for g in groups: g.Visibility=True
+view.fitAll()
 doc.saveAs(str(ROOT/'cad/assembly/Sensor_Mounts_Demo.FCStd'))
 (ROOT/'docs/sensor-demo-checks.txt').write_text('\n'.join(evidence)+'\n')
 print('Saved sensor demonstration CAD and three images; body and wire paths checked')

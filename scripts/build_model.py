@@ -309,10 +309,10 @@ for x in (57,179):
         feature(b,'Ring',circle(0,0,4)+circle(0,0,CR),0,8)
         place(b,(x,D,z),A.Rotation(V(1,0,0),-90)); finish(b)
 
-# Chamber-air cradle: offset into circulating air; tie can pass below the cradle.
+# Edge-down printing: all three pads reach the first pad's Y=16 bed edge.
 b=plate('Sensor_Mount_1',24,16,3,[(4,8,CR)])
-feature(b,'Standoff_Arm',rect(8,2,8,12),3,12)
-feature(b,'Cradle',rect(14,2,18,12),15,3)
+feature(b,'Standoff_Arm',rect(8,2,8,14),3,12)
+feature(b,'Cradle',rect(14,2,18,14),15,3)
 feature(b,'Sensor_Seat',rect(20,5,5.2,6.2),18,2.3,True)
 feature(b,'Lead_Exit_Notch',rect(20,2,5.2,3.1),18,2.3,True)
 feature(b,'Body_Tie_Slots',rect(17,5,2,6)+rect(27,5,2,6),18,3,True)
@@ -320,7 +320,7 @@ feature(b,'Wire_Tie_Ear',rect(6,-4,12,5),0,3)
 feature(b,'Wire_Tie_Slots',rect(7,-3,2,3)+rect(15,-3,2,3),3,3,True)
 feature(b,'Wire_Tie_Rear_Relief',rect(7,0,10,3),0,1,True,
         A.Placement(V(0,-0.5,0),A.Rotation(V(1,0,0),180)))
-place(b,(30,D-T,AZ),Rfront); finish(b)
+place(b,(30,D-T,AZ),Rfront); finish(b,A.Rotation(V(1,0,0),-90))
 # Wall-contact sensor: window exposes the sensor face to the target wall.
 b=plate('Sensor_Mount_2',28,16,3,[(4,8,CR)],[(14,5,5.2,6.2),(9,5,2,6),(21,5,2,6),(10,0.8,2,3),(22,0.8,2,3)])
 feature(b,'Sensor_Locators',rect(12,4,2,8)+rect(19.2,4,1.8,8),3,1.0)

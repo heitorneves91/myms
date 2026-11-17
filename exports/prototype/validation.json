@@ -1,5 +1,6 @@
 {
   "mechanism_checks": [
+    "Air mount pads reach Y=16 print edge; open cradle underside preserved",
     "All eight wall panels, base and lid slabs match the shell thickness",
     "Seam Front_Lower",
     "Seam Front_Upper",
@@ -645,10 +646,10 @@
       "name": "Sensor_Mount_1",
       "size_mm": [
         32.0,
-        20.0,
-        18.0
+        18.0,
+        20.0
       ],
-      "volume_mm3": 2833.84,
+      "volume_mm3": 3133.84,
       "solid_count": 1,
       "valid": true,
       "mesh_closed": true
