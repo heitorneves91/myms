@@ -1,6 +1,6 @@
 # MYMS — Current Project State
 
-**Updated:** 2026-11-17, through the corrected edge-down air-sensor print orientation. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
+**Updated:** 2026-11-22, through the printed-assembly fastener count. Latest CAD revision remains the corrected edge-down air-sensor mount of 2026-11-17. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
 
 ## Read this first
 
@@ -39,7 +39,7 @@ Do not load every document by default. Current owner instructions and focused cu
 | Axle/bushings | Fixed Ø12 mm × 120 mm axle with rectangular journals and front/rear tracks; 12.6 mm bushing bore, 54.4 mm hub OD (27.2 mm radius). Bushings/spool rotate around the axle. Owner explicitly said keep the current loose fit; different spool hubs can get replacement bushings. |
 | Lid | Two permanently attached rear pin hinges, two front finger-operated turnbutton catches, finger grip and locating lips. No screws removed during spool changes. Catches retain with 0.5 mm gap; they are not gasket-compression latches. |
 | Filament | Owner has no PTFE fitting. Rounded, flared split guide fixed to `Left_Upper` at X=0, Y=75, Z=355, near a top tangent of the 200–210 mm spool envelope. A 2.8 mm upward release slot reaches the wall top; open the lid to free filament upward. The lid has no filament hole or release slot. The guide stays fixed during lid motion and is retained by two M3 screws into 4 mm wall insert pockets. |
-| Fasteners | **3.2 mm M3 clearance and pivot bores** and **4.0 mm insert-pocket diameter** were explicitly requested. The generator assumes 5 mm pocket depth / 4 mm carrier depth; the owner did not specify those depths. Old 3.4 mm clearances and 2.5 mm pilot scheme are superseded. Inserts coexist with nuts/washers according to access. Final purchasing BOM is deferred. |
+| Fasteners | **3.2 mm M3 clearance and pivot bores** and **4.0 mm insert-pocket diameter** were explicitly requested. The generator assumes 5 mm pocket depth / 4 mm carrier depth; the owner did not specify those depths. Old 3.4 mm clearances and 2.5 mm pilot scheme are superseded. Inserts coexist with nuts/washers according to access. A dimensioned printed-assembly fastener BOM is now in BUILD_GUIDE.md; actual hardware selection and heater/cup fasteners remain open. |
 | Seams | Corrected wall/bridge centers at X=120, Z=117 and 153 on front and rear. Old unused middle holes at Z=21 and 347 were removed. |
 | Vents | One 20 × 5 mm opening per intake/exhaust, **100 mm² each**. Pivots sit on solid wall 12 mm from each slot. The exhaust is at X=38–58, Z=327.5–332.5 to clear its batten and hinge. Both shutters open at 90 degrees. |
 | Sensors | `Sensor_Mount_1`: original open arm/cradle layout. Arm and cradle extend from local Y=2 to Y=16, flush with the first pad's long edge, for the owner's edge-down printing orientation. The STL applies that rotation. The earlier filled, base-down pedestal was a misunderstanding and is removed. Sensor seat, mounting hole and tie/wire routes are retained. `Sensor_Mount_2` is unchanged. |
@@ -67,7 +67,7 @@ Inspect for manual FreeCAD changes before regenerating: the script replaces the 
 ## Explicit deferrals and next discussion points
 
 - **Thermal cutoff:** not purchased; owner asked to ignore selection for the current mechanical work. Continue independent CAD work without repeatedly blocking on it. No powered/thermal approval follows from deferral.
-- **Final fastener BOM:** owner deferred it. Earlier provisional counts/lengths are not a current shopping list, especially after hinge/latch additions and blind insert-pocket changes.
+- **Fastener BOM:** owner requested the current list on 2026-11-22, superseding the earlier printed-assembly BOM deferral. BUILD_GUIDE.md records 90 screws, 34 locknuts, 126 washers and 56 inserts, with explicit sizing assumptions. Four under-lid hinge connections need rear-wall clearance relief; no CAD change has been made for that finding. Heater/cup fasteners and exact insert products remain unselected.
 - **Open mechanical work:** select and dimension real heater/cup supports; discuss the aligned protected cable route and measure bundle/connectors; check physical sensor fit, lid/hinge/pivot fit, spool pull force and shell assembly when prototypes exist.
 - **Optional organizational work:** component definitions/links and a real joint-based FreeCAD assembly were discussed as easier to maintain, not requested as an implemented refactor.
 - **Later electrical/firmware/testing:** ESP32 phone web UI with no display, independent fan operation and cooldown, local fault handling, protected 24 V system and physical thermal/drying tests remain plans. Initial 55 °C, perhaps 60 °C, is discussion context, not a validated operating envelope.

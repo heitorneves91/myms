@@ -1,6 +1,6 @@
 # Mechanical review and assembly guide
 
-For the short current handover, read [PROJECT_STATE.md](PROJECT_STATE.md); for owner decisions and their rationales, read [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). The final purchasing BOM is deferred.
+For the short current handover, read [PROJECT_STATE.md](PROJECT_STATE.md); for owner decisions and their rationales, read [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). The current printed-assembly fastener BOM is listed below; heater/cup hardware remains unselected.
 
 ## Decisions and reference audit
 
@@ -55,7 +55,40 @@ See the [illustrated sensor and cable guide](SENSORS_AND_WIRING.md) for sensor b
 9. Bolt the rear hinge frame leaves to the rear wall and the moving leaves to the lid. Insert and retain their M3 pins. Bolt each front latch bracket to the wall from inside, and fit a turnbutton to its top insert. Set pivot friction so the turnbuttons move by hand. Swing each button outward 180 degrees to clear the lid; swing inward to retain it. There is 0.5 mm geometric clearance over the lid, so this is a retaining catch, not a gasket-compression latch. No lid screws need removing to open it.
 10. Install and verify the separately selected metal/ceramic heater and cup support system **before** operating. These proposed reference parts are excluded from the ABS STL exports.
 
-Final screw lengths and the purchasing BOM are deferred at the owner's request. Select lengths from the actual clamped stack, washers, nut height or insert engagement, and available blind-pocket depth. In particular, do not reuse the earlier 6–8 mm receiving engagement suggestion: the revised insert pockets are only 5 mm deep (4 mm for the carrier), and screws must not bottom out in them. Printed feet leave clearance for fastener heads underneath.
+## Printed-assembly fastener BOM — 2026-11-22
+
+Derived from the current 10 mm enclosure and native hardware stacks. This covers the printed shell, feet, tracks, guides, sensors, hinges, catches and electronics housing. It excludes the unfinished heater/cup/partition supports, PCB-specific hardware and electrical terminals. Actual purchased fastener dimensions and printed fit are not yet verified.
+
+Use M3 × 0.5 machine screws with non-countersunk heads. Lengths below are measured under the head. The sizing assumes 0.5 mm-thick flat washers, approximately 4 mm-high DIN 985 locking nuts and flush inserts. Do not substitute thicker washers/nuts without rechecking the stack.
+
+| Connection | Quantity | Screw | Receiver | Nominal clamped plastic, mm |
+| --- | ---: | --- | --- | ---: |
+| Walls to corner battens | 32 | M3 × 14 | Insert | 10 |
+| Wall seams to bridges | 4 | M3 × 14 | Insert | 10 |
+| Front latch brackets to wall | 4 | M3 × 14 | Insert | 10 |
+| Feet and base to corner battens | 4 | M3 × 20 | Insert | 16 |
+| Axle tracks to walls | 12 | M3 × 25 | Locknut | 18 |
+| Electronics pod ears/spacers to rear wall | 4 | M3 × 30 | Locknut | 21 |
+| Electronics lid | 4 | M3 × 8 | Insert | 3 |
+| Electronics carrier | 4 | M3 × 6 | Short insert | 2 |
+| Sensor mounts | 2 | M3 × 20 | Locknut | 13 |
+| Vent shutters | 2 | M3 × 20 | Locknut | 12 |
+| Rear hinge frame leaves to wall | 8 | M3 × 20 | Locknut | 14 |
+| Moving hinge leaves to lid | 4 | M3 × 20 | Locknut; clearance issue below | 13 |
+| Hinge pins | 2 | M3 × 25 | Locknut | 18 span |
+| Turnbutton pivots | 2 | M3 × 8 | Insert | 3 |
+| Filament guide ears to left wall | 2 | M3 × 6 | Insert | 2 |
+
+Aggregate requirement: **6 × M3×6, 6 × M3×8, 40 × M3×14, 20 × M3×20, 14 × M3×25, 4 × M3×30** — **90 screws**. Also **34 M3 locking nuts**, **126 M3 flat washers**, and **56 M3 heat-set inserts**. Washer count is one under each head, another under each of the 34 nuts, and two additional washers between the turnbuttons and their brackets. Do not overtighten moving pivots or clamp hinge leaves so they bind.
+
+There are **52 insert locations with 5 mm-deep pockets** and **4 carrier locations with 4 mm-deep pockets**. A candidate sizing is insert length ≤4 mm and ≤3 mm respectively, with an insert manufacturer's specified installation hole compatible with the CAD's 4.0 mm diameter. Insert knurl OD need not equal the mounting-hole diameter. SPIROL recommends extra pocket depth equal to two thread pitches (1 mm for M3×0.5); see [insert hole guidance](https://www.spirol.com/resources/white-papers/how-to-design-the-proper-hole-for-heat-ultrasonic-inserts/). These are selection constraints, not a selected insert product.
+
+For the 5 mm receiving pockets, M3×14 through 10 mm plastic plus a 0.5 mm washer leaves 3.5 mm engagement. M3×20 through the 16 mm base/foot stack plus a washer also leaves 3.5 mm. Longer screws must not bottom out or push inserts out. The short carrier screws leave 3.5 mm reach into the 4 mm pocket, including any clearance beyond a short insert.
+
+**Known clearance issue, not changed by this BOM:** lid-side hinge screws are centered at Y=138 while the rear wall begins at Y=140 on the inside. A 7 mm OD washer reaches Y=141.5, and a typical M3 hex nut also crosses that wall boundary below the lid. Four connections need local wall relief or a revised fastening arrangement before assembly. Their screws/nuts are counted above; this is not a claim that the existing fastener-free interference report verified them.
+
+The owner requested this list on 2026-11-22, superseding the earlier deferral for printed-assembly fasteners. The complete appliance BOM still awaits actual heater/cup mounts and other selected hardware. No CAD was regenerated or modified to prepare this list.
+
 
 ## Hardware and release blockers
 
