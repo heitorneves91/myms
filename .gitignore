@@ -3,3 +3,6 @@
 *.FCStd1
 private/
 __pycache__/
+.pio/
+measurements/*
+!measurements/.gitkeep

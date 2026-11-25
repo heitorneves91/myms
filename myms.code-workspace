@@ -1,0 +1,5 @@
+{
+  "folders": [{"name": "MYMS firmware", "path": "firmware"}, {"name": "MYMS project", "path": "."}],
+  "extensions": {"recommendations": ["platformio.platformio-ide"]},
+  "settings": {"platformio-ide.autoOpenPlatformIOIniFile": false}
+}

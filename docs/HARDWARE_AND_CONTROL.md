@@ -1,6 +1,6 @@
 # Hardware, control plan and operating evidence
 
-Current consolidated inventory and planning context. This is not a finished electrical schematic, firmware specification, purchasing BOM or operating approval. Read [PROJECT_STATE.md](PROJECT_STATE.md) for the current mechanical milestone and explicit deferrals. All original nuance and historical numerical examples remain in the [initial archive](history/INITIAL_PLANNING_HANDOVER.md).
+Current consolidated inventory and planning context. This is not a finished electrical schematic, purchasing BOM or operating approval. The first software prototype is documented separately in [FIRMWARE.md](FIRMWARE.md). Read [PROJECT_STATE.md](PROJECT_STATE.md) for the current mechanical milestone and explicit deferrals. All original nuance and historical numerical examples remain in the [initial archive](history/INITIAL_PLANNING_HANDOVER.md).
 
 ## Confirmed hardware and measurements
 
@@ -30,20 +30,19 @@ Nominal heater load is 120 W / 24 V = 5 A; cold-start current is not known. The 
 
 Keep the AC/DC power brick and mains outside. Buck 24 V down to a measured 5.0 V for the MCU board's intended input; sensor bus supply/pull-up is planned around 3.3 V. Board USB simultaneous-power behavior, MOSFET grounding/isolation claims, boot states and wiring topology need inspection. No finished wiring diagram exists. A nominally isolated MOSFET board may not be isolated in the final wiring.
 
-The two DS18B20s can share a 1-Wire bus by unique address; a 4.7 kΩ pull-up was discussed, not implemented. Preserve chamber/wall address assignment across reboot. Historical GPIO4 sensor, GPIO5 heater and GPIO6 button suggestions are **illustrative only**: verify straps, USB/JTAG and boot behavior before choosing pins. Independent fan control needs its own appropriate switching arrangement. Wires in the demo are mechanically illustrative colors, not a pin assignment.
+The two DS18B20s can share a 1-Wire bus by unique address; a 4.7 kΩ pull-up was discussed, not implemented. Preserve chamber/wall address assignment across reboot. The first firmware proposes configurable GPIO4 sensor, GPIO5 heater and GPIO6 **fan** inputs/outputs. These are **unverified wiring assumptions**; nothing is wired yet. The older GPIO6 button example is superseded. Verify straps, USB/JTAG, driver polarity and boot behavior before enabling the `dryer` build. Independent fan control needs its own appropriate switching arrangement. Wires in the demo are mechanically illustrative colors, not a pin assignment.
 
 The chamber/cup may be far hotter locally than the air setpoint. Use suitable insulated leads, edge protection and mechanical strain relief, with fan/element wiring kept clear of sharp metal and moving fan parts. The [sensor/cable guide](SENSORS_AND_WIRING.md) documents the current external-loop route and the proposed direct passage; that passage is not implemented.
 
-## Firmware and user interface: planned, not written
+## Firmware and user interface: first implementation
 
-- No display; ESP32-hosted Wi-Fi page usable from a phone. BLE is available on the discussed board but is not a specified app requirement. Jumpers/buttons are an acceptable fallback.
-- UI ideas: target temperature, duration, start/stop, live air/wall readings, remaining time, fan/heater state and faults. AP SSID `MiniAMS` and `192.168.4.1`, or joining home Wi-Fi, were ideas rather than implemented provisioning/security decisions.
-- Preliminary control preference: slow hysteresis on/off heater switching, not necessarily PWM/PID. Historical ±2 °C examples were not tuned or harmonized and must not be hard-coded as final values.
-- Fan starts before heat, may run throughout drying, and continues through cooldown. Separate wires permit this; they do not detect a failed fan.
-- Heater off on invalid sensor, overtemperature, controller reset/fault; verify actual driver default state during boot. Reboot must not silently restart a faulted cycle. Losing Wi-Fi must not stop local control from handling faults.
-- Optional humidity measurement (e.g. SHT31) is not confirmed hardware. Warm-air relative humidity alone does not prove dry filament. No motorized vents, display or mobile app are required.
+Implemented 2026-11-24: [PlatformIO project](../firmware), [VS Code workspace](../myms.code-workspace), local authenticated phone/computer admin with live temperature chart, persistent DS18B20 role assignment, hysteresis heater control, fan pre-run/cooldown and latched sensor/overtemperature faults. No automatic cycle restart after reboot. Initial software targets are 25–55 °C (default 45 °C), with 65 °C air/wall trips; these settings have not been physically validated or tuned.
 
-No `firmware/` implementation, pin allocation, stored profile system or validated control loop has been delivered.
+Owner confirmed nothing is wired. Default `monitor` reads sensors with physical output pins disabled; `simulation` supplies marked synthetic readings without driving outputs; `dryer` opts into the proposed configurable pins. All three compile. Computer controller/recorder tests and browser checks using mocked telemetry pass, but no firmware upload or board/thermal test has been performed.
+
+Owner chose bounded on-device CSV sessions plus a computer-side recorder for longer tests. The admin can select sampling cadence and recording duration, download/delete sessions and provision home Wi-Fi. Device storage is not an archive; download CSVs into gitignored `measurements/` or another backed-up computer folder. See [FIRMWARE.md](FIRMWARE.md) for setup, password retrieval, limits, CSV schemas, API, assumptions and verification boundaries.
+
+No display, BLE app, humidity sensor, fan tachometer, material profile library or complete electrical diagram was added. Software commands do not establish heater current, actual airflow or independent protection.
 
 ## Protection and temperature evidence
 

@@ -1,6 +1,6 @@
 # MYMS — Current Project State
 
-**Updated:** 2026-11-22, through the printed-assembly fastener count. Latest CAD revision remains the corrected edge-down air-sensor mount of 2026-11-17. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
+**Updated:** 2026-11-24, through the first ESP32-C3 firmware/admin and recording implementation. Latest CAD revision remains the corrected edge-down air-sensor mount of 2026-11-17. This document replaces the former root `PROJECT_HANDOVER.md`. Repository: https://github.com/heitorneves91/myms. Documentation and CAD/code names are English.
 
 ## Read this first
 
@@ -16,12 +16,15 @@ Status meanings: **owner-confirmed** = explicitly stated; **implemented** = pres
 | Sensor illustrations and exact existing cable openings | [SENSORS_AND_WIRING.md](SENSORS_AND_WIRING.md) |
 | Unfinished heater/cup supports and thermal-bridge correction | [MOUNTING_CONCEPT.md](MOUNTING_CONCEPT.md) |
 | Inventory, electrical/control plans, material/thermal evidence | [HARDWARE_AND_CONTROL.md](HARDWARE_AND_CONTROL.md) |
+| PlatformIO setup, firmware/admin, sensor roles and temperature recordings | [FIRMWARE.md](FIRMWARE.md) |
 | Full original planning history and old troubleshooting/costs | [history/INITIAL_PLANNING_HANDOVER.md](history/INITIAL_PLANNING_HANDOVER.md), only when needed |
 
 Do not load every document by default. Current owner instructions and focused current documents supersede the historical snapshot. The initial snapshot was reconstructed from a Portuguese planning conversation, not a verbatim transcript; no raw account export or complete original chat is included.
 
 ## Current artifacts and verification
 
+- **Access password:** owner requested a simpler memorable password after the initial firmware delivery. Device AP and admin now use `myms1234` (admin username `admin`); uploading the revision replaces the former generated password without erasing saved settings or recordings. See FIRMWARE.md for the configuration and local-network assumptions.
+- [Firmware](../firmware), [VS Code workspace](../myms.code-workspace) and [firmware guide](FIRMWARE.md): first ESP32-C3 software prototype with local authenticated admin, live chart, persistent sensor roles, hysteresis/fan/fault controller, bounded downloadable CSV sessions and [computer recorder](../scripts/record_temperatures.py). Owner confirmed nothing is wired and selected device CSV plus computer recording. Default `monitor` and optional `simulation` builds do not drive power outputs; `dryer` explicitly enables configurable proposed GPIOs. All three compile and computer-side tests pass; no board upload or physical/thermal validation. Raw measurements default to gitignored `measurements/`. No CAD regeneration for this work.
 - [Main CAD](../cad/assembly/MYMS_Prototype.FCStd): separate native printed bodies in positioned Part containers. There are **no Assembly Workbench joints**, automatic mates or solver. Sketches use mostly fixed geometry, not a fully dimension-expression-driven model.
 - [Original hardware CAD](../cad/assembly/Hardware_References.FCStd): preserve. Renamed and moved from root `myms.FCStd` at the owner’s request; its CAD contents are unchanged. It has the owner's editable heater/cup histories. Main-CAD references copy only final shapes; regeneration still reads the original.
 - [Sensor demo CAD](../cad/assembly/Sensor_Mounts_Demo.FCStd): actual mount copies plus illustrative sensor bodies, ties, leads and screws. It is explanatory reference hardware, not extra printable bodies. The owner explicitly praised this form of demonstration.
@@ -70,7 +73,7 @@ Inspect for manual FreeCAD changes before regenerating: the script replaces the 
 - **Fastener BOM:** owner requested the current list on 2026-11-22, superseding the earlier printed-assembly BOM deferral. BUILD_GUIDE.md records 90 screws, 34 locknuts, 126 washers and 56 inserts, with explicit sizing assumptions. Four under-lid hinge connections need rear-wall clearance relief; no CAD change has been made for that finding. Heater/cup fasteners and exact insert products remain unselected.
 - **Open mechanical work:** select and dimension real heater/cup supports; discuss the aligned protected cable route and measure bundle/connectors; check physical sensor fit, lid/hinge/pivot fit, spool pull force and shell assembly when prototypes exist.
 - **Optional organizational work:** component definitions/links and a real joint-based FreeCAD assembly were discussed as easier to maintain, not requested as an implemented refactor.
-- **Later electrical/firmware/testing:** ESP32 phone web UI with no display, independent fan operation and cooldown, local fault handling, protected 24 V system and physical thermal/drying tests remain plans. Initial 55 °C, perhaps 60 °C, is discussion context, not a validated operating envelope.
+- **Electrical/firmware/testing:** the first firmware/admin/recording implementation now exists; GPIO4/5/6 are proposed configurable sensor/heater/fan pins, not verified wiring. Next: USB-only upload and sensor tests, independent fan-driver/electrical selection and actual default-off verification, then protected supervised thermal tests. No hardware is wired. Initial 55 °C, perhaps 60 °C, remains discussion context, not a validated operating envelope; software currently offers 25–55 °C targets with initial 65 °C air/wall trips.
 
 When a new owner decision arrives, update its focused rationale and this summary if it changes the state. Keep the original planning archive for historical evidence rather than letting its old uncertainties override confirmed measurements.
 
