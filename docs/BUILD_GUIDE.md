@@ -2,6 +2,8 @@
 
 For the short current handover, read [PROJECT_STATE.md](PROJECT_STATE.md); for owner decisions and their rationales, read [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md). The current printed-assembly fastener BOM is listed below; heater/cup hardware remains unselected.
 
+**2026-11-25:** the owner reports all Printed_Assembly parts printed successfully. The separate [mounting retrofit](MOUNTING_RETROFIT.md) preserves them and replaces the original metal-support concepts with four integrated printed supports, purchased PEEK spacers and a supplemental fastener BOM. Procurement, physical fit and thermal checks remain open; older partition/band notes below describe the unchanged original main CAD.
+
 ## Decisions and reference audit
 
 The owner confirmed on 2026-11-14 that the cup model's dimensions are correct and that the physical cup has approximately 6 mm side perforations and 3 mm bottom perforations. Those perforations are intentionally absent from the reference geometry; their pitch and total open area were not supplied. Do not use this solid reference as a flow simulation.

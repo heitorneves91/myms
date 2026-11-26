@@ -13,6 +13,7 @@ Load only the context needed for the task:
 | Heater/cup mounting | [docs/MOUNTING_CONCEPT.md](docs/MOUNTING_CONCEPT.md) |
 | Inventory, electronics, firmware, materials, thermal testing | [docs/HARDWARE_AND_CONTROL.md](docs/HARDWARE_AND_CONTROL.md) |
 | PlatformIO, ESP32-C3 firmware/admin, CSV recording | [docs/FIRMWARE.md](docs/FIRMWARE.md) |
+| Electrical wiring, resistors/capacitors, LM2596 and MOSFET drive | [docs/ELECTRICAL_SCHEMATIC.md](docs/ELECTRICAL_SCHEMATIC.md) |
 | Old prices, original PETG troubleshooting, or full initial planning detail | [docs/history/INITIAL_PLANNING_HANDOVER.md](docs/history/INITIAL_PLANNING_HANDOVER.md), only when needed |
 
 Working rules:

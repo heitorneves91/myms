@@ -1,10 +1,17 @@
 # Independent heater and cup supports
 
-Status: assistant-proposed mounting architecture; no actual clamp/standoff selection or replacement CAD has been approved or implemented. See [PROJECT_STATE.md](PROJECT_STATE.md) for the current overall handover and [DESIGN_DECISIONS.md](DESIGN_DECISIONS.md) for rationale/status history.
+Current implementation: the separate supplemental [mounting retrofit](MOUNTING_RETROFIT.md) uses four integrated printed supports, eight purchased PEEK spacers and stock fasteners while preserving the owner's completed prints. Geometric checks pass; procurement, physical fit, thermal and airflow validation remain outstanding. The pipe-clamp architecture below is an earlier proposal, not the current parts list.
 
 2026-11-14: Owner confirmed that no heater/cup mounting hardware has been purchased. Thermal cutoff selection is deferred at the owner's request; this note covers mechanical mounting only.
 
-## Proposed architecture
+## Redesign constraints — 2026-11-25
+
+The owner reports successfully printing every part in `Printed_Assembly`. Those parts are now an installed-design constraint: preserve their geometry and existing interfaces. The owner cannot fabricate metal and has requested a mounting redesign. Custom sheet-metal cutting, drilling, bending or welding is not an acceptable owner task. Additional printable adapters and ready-made hardware are candidates; willingness to assemble purchased brackets/clamps/standoffs is being clarified before selecting them.
+
+The owner initially reported foil around the cup, then asked to exclude foil and assume no existing metal supports. The implemented supplemental retrofit omits the custom partition/bands, independently retains the heater and reuses existing base holes. Cup contact geometry and commercial spacer dimensions are explicit, but actual procurement, clamping on real perforations and thermal behavior remain unverified. See the retrofit guide for CAD, assembly and the supplemental BOM. The earlier architecture below remains historical context.
+
+
+## Earlier pipe-clamp architecture
 
 Do not fasten the cup to the heater. Support both independently from the base. Keep the cup mouth aligned with the heater outlet, with a free gap between them. The current model has a 15.5 mm axial gap from the projecting outlet to the cup mouth; this is a layout starting point, not a validated thermal or airflow clearance.
 

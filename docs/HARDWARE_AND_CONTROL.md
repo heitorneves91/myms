@@ -1,6 +1,6 @@
 # Hardware, control plan and operating evidence
 
-Current consolidated inventory and planning context. This is not a finished electrical schematic, purchasing BOM or operating approval. The first software prototype is documented separately in [FIRMWARE.md](FIRMWARE.md). Read [PROJECT_STATE.md](PROJECT_STATE.md) for the current mechanical milestone and explicit deferrals. All original nuance and historical numerical examples remain in the [initial archive](history/INITIAL_PLANNING_HANDOVER.md).
+Current consolidated inventory and planning context. A module-level [electrical schematic and passive-component list](ELECTRICAL_SCHEMATIC.md) is now provided; exact module identification and some ratings remain open. This is not a validated electrical build or operating approval. The first software prototype is documented separately in [FIRMWARE.md](FIRMWARE.md). Read [PROJECT_STATE.md](PROJECT_STATE.md) for the current mechanical milestone and explicit deferrals. All original nuance and historical numerical examples remain in the [initial archive](history/INITIAL_PLANNING_HANDOVER.md).
 
 ## Confirmed hardware and measurements
 
@@ -8,13 +8,13 @@ Current consolidated inventory and planning context. This is not a finished elec
 | --- | --- | --- |
 | Printer/software | Bambu P1S, FreeCAD 1.1.4, Ubuntu 24.04 | Installed slicer profile/version settings for future print recommendations |
 | Enclosure filament | Voolt3D ABS, purchased | Exact formulation and verified thermal/print guidance |
-| PTC + fan | 24 V, 120 W, four separate wires; circular grille is hot outlet | Fan voltage/current/polarity, cold-start current, mounting-tab ratings |
+| PTC + fan | 24 V, 120 W, four separate wires; circular grille is hot outlet | Fan is now owner-confirmed 24 V; fan current/polarity, PTC cold-start current and mounting-tab ratings remain unknown |
 | PTC CAD | 60 × 60 × 39 mm body, 88 mm tab span; outlet projects 2.5 mm, complete bounds 88 × 60 × 41.5 mm | Physical tab/material temperatures under load |
 | Cup | Owner confirmed model dimensions: 95 mm cylindrical body, 127 mm height; modeled lip bounds ~102.83 mm | Grade, complete perforation pattern/open area, actual mounting arrangement |
 | Cup holes | Approximately 6 mm side holes and 3 mm bottom holes, owner-confirmed | Counts/pitch; holes are absent from CAD and must not be inferred from its solid surface |
 | PSU | External enclosed 24 V / 10 A power brick; output lead marked 18 AWG, barrel/P4 plug | Sustained/surge capability, metallurgy/length, exact barrel size/rating, final connector choice |
 | MCU | ESP32-C3 SuperMini USB-C, bought as part of electronics shopping | Exact board/pinout/power behavior |
-| Switching | D4184/dual-MOSFET module, advertised ~15 A / 400 W | Actual PCB current/thermal rating, 3.3 V compatibility, default-off behavior, fan driver arrangement |
+| Switching | D4184/dual-MOSFET module, advertised ~15 A / 400 W | Owner confirms one TRIG/PWM plus signal GND per module. Two modules are needed for independent channels; PCB current rating, trigger circuit/voltage and default-off behavior remain unverified |
 | Buck | LM2596 adjustable module | Actual board dimensions, verified 5.0 V setting, USB power interaction |
 | Sensors | DS18B20 TO-92 package; two planned locations | Authenticity, actual dimensions/pinout, final thermal-map locations |
 | Spool | Owner calls it Bambu standard, approximately 200 mm OD and 55 mm bore | Total width not measured; CAD allows 75 mm width and 210 mm OD |
@@ -28,21 +28,33 @@ Heater tab slots are centered at original XY (38,24) and (-38,-24), approximatel
 
 Nominal heater load is 120 W / 24 V = 5 A; cold-start current is not known. The 10 A PSU label provides nominal headroom but does not validate the complete cable/connector path. The owner has bullet connectors; replacing the barrel or using XT60 was discussed, not decided. Do not assign a barrel size, fuse value, connector purchase or fan supply rating by assumption.
 
-Keep the AC/DC power brick and mains outside. Buck 24 V down to a measured 5.0 V for the MCU board's intended input; sensor bus supply/pull-up is planned around 3.3 V. Board USB simultaneous-power behavior, MOSFET grounding/isolation claims, boot states and wiring topology need inspection. No finished wiring diagram exists. A nominally isolated MOSFET board may not be isolated in the final wiring.
+Keep the AC/DC power brick and mains outside. Buck 24 V down to a measured 5.0 V for the MCU board's intended input; sensor bus supply/pull-up is planned around 3.3 V. Board USB simultaneous-power behavior, MOSFET grounding/isolation claims, boot states and wiring topology need inspection. A two-sheet [module-level wiring proposal](ELECTRICAL_SCHEMATIC.md) now exists; it assumes common-ground low-side modules pending exact board identification. A nominally isolated MOSFET board may not be isolated in the final wiring.
 
-The two DS18B20s can share a 1-Wire bus by unique address; a 4.7 kΩ pull-up was discussed, not implemented. Preserve chamber/wall address assignment across reboot. The first firmware proposes configurable GPIO4 sensor, GPIO5 heater and GPIO6 **fan** inputs/outputs. These are **unverified wiring assumptions**; nothing is wired yet. The older GPIO6 button example is superseded. Verify straps, USB/JTAG, driver polarity and boot behavior before enabling the `dryer` build. Independent fan control needs its own appropriate switching arrangement. Wires in the demo are mechanically illustrative colors, not a pin assignment.
+The two DS18B20s can share a 1-Wire bus by unique address; the electrical proposal specifies one shared 4.7 kΩ pull-up to 3V3 and recommends 100 nF supply decoupling at each sensor. The owner attempted a sensor test without the pull-up and reported NaN serial values; no successful measurement has been reported. Preserve chamber/wall address assignment across reboot. The first firmware proposes configurable GPIO4 sensor, GPIO5 heater and GPIO6 **fan** inputs/outputs. These are **unverified wiring assumptions**; valid sensor readings and power switching have not been confirmed. The older GPIO6 button example is superseded. Verify straps, USB/JTAG, driver polarity and boot behavior before enabling the `dryer` build. Independent fan control needs its own appropriate switching arrangement. Wires in the demo are mechanically illustrative colors, not a pin assignment.
 
 The chamber/cup may be far hotter locally than the air setpoint. Use suitable insulated leads, edge protection and mechanical strain relief, with fan/element wiring kept clear of sharp metal and moving fan parts. The [sensor/cable guide](SENSORS_AND_WIRING.md) documents the current external-loop route and the proposed direct passage; that passage is not implemented.
 
+## Electrical schematic and passives — 2026-11-26
+
+Owner confirmed the fan is 24 V and each MOSFET module has one TRIG/PWM input and GND. [ELECTRICAL_SCHEMATIC.md](ELECTRICAL_SCHEMATIC.md) provides power and sensor/control sheets, required versus recommended/optional passives, a connection list and checks against firmware GPIO4/5/6. The existing LM2596 module is used, adjusted to measured 5.0 V, with JP1 isolating its output when USB powers the board.
+
+A TC4427A non-inverting 5 V buffer is a proposed additional component for direct-gate D4184-type modules: AOD4184A low on-resistance is not specified at 3.3 V. It is not assumed purchased or mandatory for an exact module already verified at 3.3 V under load. Actual input circuitry and 5 V tolerance must be checked. Fan-current/fuse values, terminal mapping, startup behavior and the already deferred thermal cutoff selection remain open. No powered validation, firmware changes or CAD regeneration accompany the schematic.
+
 ## Firmware and user interface: first implementation
 
-Implemented 2026-11-24: [PlatformIO project](../firmware), [VS Code workspace](../myms.code-workspace), local authenticated phone/computer admin with live temperature chart, persistent DS18B20 role assignment, hysteresis heater control, fan pre-run/cooldown and latched sensor/overtemperature faults. No automatic cycle restart after reboot. Initial software targets are 25–55 °C (default 45 °C), with 65 °C air/wall trips; these settings have not been physically validated or tuned.
+Implemented 2026-11-24: [PlatformIO project](../firmware), [VS Code workspace](../myms.code-workspace), local phone/computer admin with live temperature chart, persistent DS18B20 role assignment, hysteresis heater control, fan pre-run/cooldown and latched sensor/overtemperature faults. No automatic cycle restart after reboot. Initial software targets are 25–55 °C (default 45 °C), with 65 °C air/wall trips; these settings have not been physically validated or tuned.
 
-Owner confirmed nothing is wired. Default `monitor` reads sensors with physical output pins disabled; `simulation` supplies marked synthetic readings without driving outputs; `dryer` opts into the proposed configurable pins. All three compile. Computer controller/recorder tests and browser checks using mocked telemetry pass, but no firmware upload or board/thermal test has been performed.
+The initial firmware was delivered before wiring. The owner later reported a sensor test without its pull-up and NaN logs; this does not establish valid readings or verified heater wiring. Default `monitor` reads sensors with physical output pins disabled; `simulation` supplies marked synthetic readings without driving outputs; `dryer` opts into the proposed configurable pins. All three compile. Computer controller/recorder tests and browser checks using mocked telemetry pass, but no firmware upload or board/thermal test has been performed.
+
+Firmware 0.4.0 (2026-11-26) also provides the owner's requested manual fan-only and fan-plus-heater controls. Fan-only can test an output without temperature sensors; manual heat remains regulated and requires fresh assigned sensors, pre-run and fault/cooldown handling. It runs until explicitly stopped and does not resume after reboot. Default monitoring still disables physical outputs. Controller/browser tests and all three builds pass; no new physical validation is claimed.
+
+At the owner's request, a separate sensor-free output-test mode is now available from the heat button: 10 s fan pre-run, a nominal 20 s heater pulse, at least 2 min fan cooling, then fan-only until stopped. This is not continuous sensor-free heating, and the timer does not establish a safe temperature or fan/MOSFET operation. See FIRMWARE.md for the explicit test API, remaining-time fields, repeat-command lockout and validation limits.
+
+At the owner's request, firmware 0.4.0 removes the admin/API password and recorder prompt while retaining the AP Wi-Fi password `myms1234` and the mutation header. The sensor-free heater pulse is now 20 seconds; its pre-run, minimum fan period, repeated-command lockout and continuous-heating sensor requirements are preserved.
 
 Owner chose bounded on-device CSV sessions plus a computer-side recorder for longer tests. The admin can select sampling cadence and recording duration, download/delete sessions and provision home Wi-Fi. Device storage is not an archive; download CSVs into gitignored `measurements/` or another backed-up computer folder. See [FIRMWARE.md](FIRMWARE.md) for setup, password retrieval, limits, CSV schemas, API, assumptions and verification boundaries.
 
-No display, BLE app, humidity sensor, fan tachometer, material profile library or complete electrical diagram was added. Software commands do not establish heater current, actual airflow or independent protection.
+No display, BLE app, humidity sensor, fan tachometer or material profile library was added. A later module-level electrical schematic documents wiring and passives, with unresolved module/rating details. Software commands do not establish heater current, actual airflow or independent protection.
 
 ## Protection and temperature evidence
 
@@ -50,7 +62,7 @@ Owner explicitly asked to defer thermal cutoff selection and continue mechanical
 
 The old 70–80 °C NC thermostat suggestion was a conceptual graphic, not a selected device or universal safe trip value. Choose a device and mounting arrangement from actual temperatures/fault behavior and its DC switching suitability. The cup is a conducting/radiating deflector, not insulation. See [MOUNTING_CONCEPT.md](MOUNTING_CONCEPT.md) for the through-screw thermal-bridge correction.
 
-Discussed initial chamber target: 55 °C, perhaps 60 °C after validation. The early PETG enclosure's 60 °C cap is superseded as a material assumption, not replaced by a measured higher ABS limit. No higher operating temperature has been validated. No physical prototype, dry-cycle result, temperature map, fault test or unattended-use evidence has been reported.
+Discussed initial chamber target: 55 °C, perhaps 60 °C after validation. The early PETG enclosure's 60 °C cap is superseded as a material assumption, not replaced by a measured higher ABS limit. No higher operating temperature has been validated. The owner reports successful printing of the mechanical assembly; no dry-cycle result, temperature map, fault test or unattended-use evidence has been reported.
 
 The pre-power test sequence remains: verify actual electrical ratings/polarity/default states, mount and independently protect the heater on a nonflammable setup, map cup/outlet/mount/fastener/wall/spool temperatures, test control/fan failure responses and cooldown, then supervise lower-temperature chamber tests. Two operational sensors alone do not characterize every hot spot. Printed material strength/creep and mounting conduction require measurements in the real assembly.
 

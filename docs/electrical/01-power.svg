@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1420" viewBox="0 0 1800 1420">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#203640} .wire{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}</style>
+<text x="55" y="52" font-size="31" style="fill:#203640" font-weight="bold" text-anchor="start">MYMS — Electrical schematic / 1 of 2</text>
+<text x="55" y="88" font-size="19" style="fill:#203640" font-weight="normal" text-anchor="start">24 V power distribution, existing LM2596 module, independent heater and fan switching</text>
+<polyline class="wire" points="55,110 1745,110" stroke="#b7c6cc" stroke-width="1"/>
+<rect x="55" y="170" width="285" height="170" rx="5" fill="#f3f7f8" stroke="#203640" stroke-width="2"/>
+<text x="197.5" y="202" font-size="20" style="fill:#203640" font-weight="bold" text-anchor="middle">PSU1: existing supply</text>
+<text x="197" y="240" font-size="22" style="fill:#203640" font-weight="normal" text-anchor="middle">24 V DC / 10 A</text>
+<text x="197" y="275" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="middle">Mains stays outside</text>
+<text x="325" y="218" font-size="24" style="fill:#b63832" font-weight="normal" text-anchor="start">+</text>
+<text x="325" y="308" font-size="24" style="fill:#245d83" font-weight="normal" text-anchor="start">−</text>
+<polyline class="wire" points="340,210 395,210" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="395,210 416,210" stroke="#b63832" stroke-width="3"/>
+<rect x="416" y="194" width="68" height="32" rx="5" fill="white" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="425,210 475,210" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="484,210 505,210" stroke="#b63832" stroke-width="3"/>
+<text x="450" y="178" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">F0: main fuse</text>
+<text x="450" y="255" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="middle">DC rating: TBD</text>
+<polyline class="wire" points="505,210 555,210" stroke="#b63832" stroke-width="3"/>
+<circle cx="555" cy="210" r="5" fill="white" stroke="#b63832" stroke-width="2"/><circle cx="625" cy="210" r="5" fill="white" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="560,205 615,183" stroke="#b63832" stroke-width="3"/>
+<text x="590" y="164" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">S1: DC switch</text>
+<polyline class="wire" points="625,210 710,210 710,1070" stroke="#b63832" stroke-width="3"/>
+<text x="710" y="175" font-size="21" style="fill:#b63832" font-weight="normal" text-anchor="middle">+24V_BUS</text>
+<polyline class="wire" points="340,300 410,300 410,365" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="410,365 410,377" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="393,377 427,377" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="399,385 421,385" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="405,393 415,393" stroke="#245d83" stroke-width="3"/>
+<text x="410" y="417" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<text x="55" y="410" font-size="21" style="fill:#245d83" font-weight="bold" text-anchor="start">GND STAR</text>
+<text x="55" y="442" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="start">Separate heavy load returns</text>
+<text x="55" y="470" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="start">from ESP/sensor ground wires.</text>
+<polyline class="wire" points="710,250 560,250 560,330" stroke="#9a6514" stroke-width="3"/>
+<circle cx="710" cy="250" r="5" fill="#b63832"/>
+<polyline class="wire" points="560,330 560,363" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="544,363 576,363" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="544,377 576,377" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="560,377 560,410" stroke="#9a6514" stroke-width="3"/>
+<text x="584" y="357" font-size="17" style="fill:#9a6514" font-weight="normal" text-anchor="start">C6 100 µF</text>
+<text x="584" y="382" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="start">50 V / optional</text>
+<text x="532" y="356" font-size="20" style="fill:#9a6514" font-weight="normal" text-anchor="start">+</text>
+<polyline class="wire" points="560,410 560,430" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="560,430 560,442" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="543,442 577,442" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="549,450 571,450" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="555,458 565,458" stroke="#245d83" stroke-width="3"/>
+<text x="560" y="482" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<circle cx="710" cy="340" r="5" fill="#b63832"/>
+<polyline class="wire" points="710,340 805,340" stroke="#b63832" stroke-width="3"/>
+<rect x="805" y="317" width="200" height="46" rx="5" fill="#fff7e9" stroke="#9a6514" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="905" y="347" font-size="18" style="fill:#9a6514" font-weight="normal" text-anchor="middle">TH1: NC cutout</text>
+<text x="905" y="293" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="middle">Trip / DC current rating: deferred</text>
+<polyline class="wire" points="1005,340 1120,340" stroke="#b63832" stroke-width="3"/>
+<rect x="1120" y="290" width="300" height="235" rx="5" fill="#f3f7f8" stroke="#203640" stroke-width="2"/>
+<text x="1270.0" y="322" font-size="20" style="fill:#203640" font-weight="bold" text-anchor="middle">U2: heater MOSFET</text>
+<text x="1135" y="347" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="start">VIN+</text>
+<text x="1135" y="412" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="start">VIN−</text>
+<text x="1135" y="472" font-size="18" style="fill:#12785d" font-weight="normal" text-anchor="start">TRIG/PWM</text>
+<text x="1135" y="517" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="start">signal GND</text>
+<text x="1405" y="347" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="end">OUT+</text>
+<text x="1405" y="412" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="end">OUT−</text>
+<polyline class="wire" points="1030,405 1120,405" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1030,405 1030,510 1120,510" stroke="#245d83" stroke-width="3"/>
+<circle cx="1030" cy="510" r="5" fill="#245d83"/>
+<polyline class="wire" points="1030,510 1030,534" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1030,534 1030,546" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1013,546 1047,546" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1019,554 1041,554" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1025,562 1035,562" stroke="#245d83" stroke-width="3"/>
+<text x="1030" y="586" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<polyline class="wire" points="950,465 1020,465" stroke="#12785d" stroke-width="3"/>
+<path d="M 1020 465 Q 1030 450 1040 465" fill="none" stroke="#12785d" stroke-width="3"/>
+<polyline class="wire" points="1040,465 1120,465" stroke="#12785d" stroke-width="3"/>
+<polyline class="wire" points="966,458 950,465 966,472" stroke="#12785d" stroke-width="3"/>
+<text x="950" y="450" font-size="18" style="fill:#12785d" font-weight="normal" text-anchor="middle">HEAT_TRIG</text>
+<polyline class="wire" points="1420,340 1540,340" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="1420,405 1540,405" stroke="#203640" stroke-width="3"/>
+<rect x="1540" y="310" width="210" height="120" rx="5" fill="#fff1ee" stroke="#203640" stroke-width="2"/>
+<text x="1645.0" y="342" font-size="23" style="fill:#203640" font-weight="bold" text-anchor="middle">HEATER</text>
+<text x="1645" y="383" font-size="20" style="fill:#203640" font-weight="normal" text-anchor="middle">24 V / 120 W</text>
+<text x="1645" y="410" font-size="17" style="fill:#203640" font-weight="normal" text-anchor="middle">5 A nominal</text>
+<text x="1510" y="326" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="start">+</text>
+<text x="1480" y="450" font-size="16" style="fill:#203640" font-weight="normal" text-anchor="middle">SW_HEAT</text>
+<circle cx="710" cy="725" r="5" fill="#b63832"/>
+<polyline class="wire" points="710,725 790,725" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="790,725 811,725" stroke="#b63832" stroke-width="3"/>
+<rect x="811" y="709" width="68" height="32" rx="5" fill="white" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="820,725 870,725" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="879,725 900,725" stroke="#b63832" stroke-width="3"/>
+<text x="845" y="693" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">F2: fan branch</text>
+<text x="845" y="770" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="middle">DC rating: TBD</text>
+<polyline class="wire" points="900,725 1120,725" stroke="#b63832" stroke-width="3"/>
+<rect x="1120" y="675" width="300" height="235" rx="5" fill="#f3f7f8" stroke="#203640" stroke-width="2"/>
+<text x="1270.0" y="707" font-size="23" style="fill:#203640" font-weight="bold" text-anchor="middle">U3: fan MOSFET</text>
+<text x="1135" y="732" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="start">VIN+</text>
+<text x="1135" y="797" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="start">VIN−</text>
+<text x="1135" y="857" font-size="18" style="fill:#12785d" font-weight="normal" text-anchor="start">TRIG/PWM</text>
+<text x="1135" y="902" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="start">signal GND</text>
+<text x="1405" y="732" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="end">OUT+</text>
+<text x="1405" y="797" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="end">OUT−</text>
+<polyline class="wire" points="1030,790 1120,790" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1030,790 1030,895 1120,895" stroke="#245d83" stroke-width="3"/>
+<circle cx="1030" cy="895" r="5" fill="#245d83"/>
+<polyline class="wire" points="1030,895 1030,919" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1030,919 1030,931" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1013,931 1047,931" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1019,939 1041,939" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1025,947 1035,947" stroke="#245d83" stroke-width="3"/>
+<text x="1030" y="971" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<polyline class="wire" points="950,850 1020,850" stroke="#12785d" stroke-width="3"/>
+<path d="M 1020 850 Q 1030 835 1040 850" fill="none" stroke="#12785d" stroke-width="3"/>
+<polyline class="wire" points="1040,850 1120,850" stroke="#12785d" stroke-width="3"/>
+<polyline class="wire" points="966,843 950,850 966,857" stroke="#12785d" stroke-width="3"/>
+<text x="950" y="835" font-size="18" style="fill:#12785d" font-weight="normal" text-anchor="middle">FAN_TRIG</text>
+<polyline class="wire" points="1420,725 1540,725" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="1420,790 1540,790" stroke="#203640" stroke-width="3"/>
+<rect x="1540" y="695" width="210" height="120" rx="5" fill="#eef7fa" stroke="#203640" stroke-width="2"/>
+<text x="1645.0" y="727" font-size="23" style="fill:#203640" font-weight="bold" text-anchor="middle">FAN</text>
+<text x="1645" y="768" font-size="22" style="fill:#203640" font-weight="normal" text-anchor="middle">24 V</text>
+<text x="1645" y="795" font-size="16" style="fill:#203640" font-weight="normal" text-anchor="middle">Current: verify label</text>
+<text x="1510" y="711" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="start">+</text>
+<text x="1480" y="818" font-size="16" style="fill:#203640" font-weight="normal" text-anchor="middle">SW_FAN</text>
+<circle cx="1480" cy="725" r="5" fill="#b63832"/>
+<circle cx="1480" cy="790" r="5" fill="#203640"/>
+<polyline class="wire" points="1480,725 1480,745" stroke="#203640" stroke-width="3"/>
+<polyline class="wire" points="1466,745 1494,745" stroke="#203640" stroke-width="3"/>
+<polygon points="1480,748 1466,773 1494,773" fill="white" stroke="#203640" stroke-width="2"/>
+<polyline class="wire" points="1480,773 1480,790" stroke="#203640" stroke-width="3"/>
+<text x="1448" y="845" font-size="17" style="fill:#9a6514" font-weight="normal" text-anchor="start">D1: fan turn-off clamp</text>
+<text x="1448" y="870" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="start">SB560 candidate: 5 A / 60 V</text>
+<text x="1448" y="894" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="start">Stripe/cathode → fan +</text>
+<text x="1448" y="918" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="start">Verify fan datasheet / current.</text>
+<circle cx="710" cy="1070" r="5" fill="#b63832"/>
+<polyline class="wire" points="710,1070 790,1070" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="790,1070 811,1070" stroke="#b63832" stroke-width="3"/>
+<rect x="811" y="1054" width="68" height="32" rx="5" fill="white" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="820,1070 870,1070" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="879,1070 900,1070" stroke="#b63832" stroke-width="3"/>
+<text x="845" y="1038" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">F1: logic branch</text>
+<text x="845" y="1115" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="middle">DC rating: TBD</text>
+<polyline class="wire" points="900,1070 1120,1070" stroke="#b63832" stroke-width="3"/>
+<rect x="1120" y="1020" width="300" height="170" rx="5" fill="#f3f7f8" stroke="#203640" stroke-width="2"/>
+<text x="1270.0" y="1052" font-size="20" style="fill:#203640" font-weight="bold" text-anchor="middle">U1: LM2596 module</text>
+<text x="1135" y="1077" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="start">IN+</text>
+<text x="1135" y="1150" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="start">IN−</text>
+<text x="1405" y="1077" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="end">OUT+</text>
+<text x="1405" y="1150" font-size="18" style="fill:#245d83" font-weight="normal" text-anchor="end">OUT−</text>
+<text x="1270" y="1110" font-size="19" style="fill:#203640" font-weight="normal" text-anchor="middle">Set / measure 5.0 V</text>
+<polyline class="wire" points="1030,1143 1120,1143" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1030,1143 1030,1155" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1013,1155 1047,1155" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1019,1163 1041,1163" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1025,1171 1035,1171" stroke="#245d83" stroke-width="3"/>
+<text x="1030" y="1195" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<polyline class="wire" points="1420,1143 1450,1143" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1450,1143 1450,1155" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1433,1155 1467,1155" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1439,1163 1461,1163" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1445,1171 1455,1171" stroke="#245d83" stroke-width="3"/>
+<text x="1450" y="1195" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<polyline class="wire" points="1420,1070 1575,1070" stroke="#b63832" stroke-width="3"/>
+<text x="1485" y="1048" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">+5V_EXT</text>
+<circle cx="1575" cy="1070" r="5" fill="white" stroke="#b63832" stroke-width="2"/><circle cx="1640" cy="1070" r="5" fill="white" stroke="#b63832" stroke-width="2"/>
+<polyline class="wire" points="1581,1065 1630,1049" stroke="#b63832" stroke-width="3"/>
+<text x="1605" y="1020" font-size="17" style="fill:#b63832" font-weight="normal" text-anchor="middle">JP1: removable link</text>
+<polyline class="wire" points="1640,1070 1730,1070" stroke="#b63832" stroke-width="3"/>
+<polyline class="wire" points="1714,1063 1730,1070 1714,1077" stroke="#b63832" stroke-width="3"/>
+<text x="1730" y="1055" font-size="18" style="fill:#b63832" font-weight="normal" text-anchor="middle">+5V_BOARD</text>
+<polyline class="wire" points="1490,1070 1490,1130" stroke="#9a6514" stroke-width="3"/>
+<circle cx="1490" cy="1070" r="5" fill="#b63832"/>
+<polyline class="wire" points="1490,1130 1490,1163" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="1474,1163 1506,1163" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="1474,1177 1506,1177" stroke="#9a6514" stroke-width="3"/>
+<polyline class="wire" points="1490,1177 1490,1210" stroke="#9a6514" stroke-width="3"/>
+<text x="1514" y="1157" font-size="17" style="fill:#9a6514" font-weight="normal" text-anchor="start">C5 220 µF</text>
+<text x="1514" y="1182" font-size="16" style="fill:#9a6514" font-weight="normal" text-anchor="start">16 V / optional</text>
+<text x="1462" y="1156" font-size="20" style="fill:#9a6514" font-weight="normal" text-anchor="start">+</text>
+<polyline class="wire" points="1490,1210 1490,1222" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1473,1222 1507,1222" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1479,1230 1501,1230" stroke="#245d83" stroke-width="3"/>
+<polyline class="wire" points="1485,1238 1495,1238" stroke="#245d83" stroke-width="3"/>
+<text x="1490" y="1262" font-size="16" style="fill:#245d83" font-weight="normal" text-anchor="middle">GND</text>
+<text x="55" y="1110" font-size="20" style="fill:#245d83" font-weight="bold" text-anchor="start">Three branches share GND.</text>
+<text x="55" y="1145" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="start">Never connect SW_HEAT or SW_FAN</text>
+<text x="55" y="1173" font-size="18" style="fill:#203640" font-weight="normal" text-anchor="start">directly to GND: that bypasses switching.</text>
+<rect x="55" y="1290" width="1690" height="75" rx="5" fill="#fff7e9" stroke="#9a6514" stroke-width="2"/>
+<text x="75" y="1318" font-size="19" style="fill:#9a6514" font-weight="normal" text-anchor="start">JP1 OPEN before connecting a powered USB cable. USB can then power ESP + driver; 24 V still powers the loads.</text>
+<text x="75" y="1346" font-size="18" style="fill:#9a6514" font-weight="normal" text-anchor="start">Fuse values depend on fan/PTC inrush and wire/connector ratings. TH1 selection remains deferred; no bypass is specified.</text>
+<text x="55" y="1396" font-size="16" style="fill:#203640" font-weight="normal" text-anchor="start">MYMS / Rev A / 2026-11-26 — Proposal; verify actual module terminals, ratings and startup behavior. Not a PCB layout.</text>
+</svg>

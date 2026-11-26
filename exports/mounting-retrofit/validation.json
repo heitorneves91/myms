@@ -1,0 +1,4391 @@
+{
+  "status": "MECHANICAL FIT PROTOTYPE - NOT THERMALLY VALIDATED",
+  "source_sha256": {
+    "cad/assembly/MYMS_Prototype.FCStd": "d0414868f9efdd7ef943f7ae04b4c3476c96b8dfd336f26ddbbe1d392ac1b789",
+    "cad/assembly/Hardware_References.FCStd": "4056f00153d1ab1a89f3306907cb487750ffb9f546eb51097d9befcae3adc1d2"
+  },
+  "prints": [
+    {
+      "name": "PTC_Lower_Support",
+      "size_mm": [
+        29.999999999999993,
+        45.00000000000001,
+        26.0
+      ],
+      "closed": true,
+      "print_face": "Maximum X face on bed; +90 deg around Y"
+    },
+    {
+      "name": "PTC_Upper_Support",
+      "size_mm": [
+        106.0,
+        44.999999999999986,
+        26.0
+      ],
+      "closed": true,
+      "print_face": "Maximum X face on bed; +90 deg around Y"
+    },
+    {
+      "name": "Cup_113_Cradle",
+      "size_mm": [
+        136.41629510133984,
+        122.26707807335389,
+        8.000000000001421
+      ],
+      "closed": true,
+      "print_face": "Maximum X face on bed; +90 deg around Y"
+    },
+    {
+      "name": "Cup_183_Cradle",
+      "size_mm": [
+        136.41629510133987,
+        122.26707807335387,
+        8.000000000001648
+      ],
+      "closed": true,
+      "print_face": "Maximum X face on bed; +90 deg around Y"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Preserved_Front_Lower",
+      "passed": true,
+      "source_volume": 288917.45136840874,
+      "snapshot_volume": 288917.45136840874
+    },
+    {
+      "name": "Preserved_Rear_Lower",
+      "passed": true,
+      "source_volume": 288475.7522806812,
+      "snapshot_volume": 288475.7522806812
+    },
+    {
+      "name": "Preserved_Left_Lower",
+      "passed": true,
+      "source_volume": 197678.30091227236,
+      "snapshot_volume": 197678.30091227236
+    },
+    {
+      "name": "Preserved_Right_Lower",
+      "passed": true,
+      "source_volume": 197678.30091227236,
+      "snapshot_volume": 197678.30091227236
+    },
+    {
+      "name": "Preserved_Front_Upper",
+      "passed": true,
+      "source_volume": 504793.62842102203,
+      "snapshot_volume": 504793.62842102203
+    },
+    {
+      "name": "Preserved_Rear_Upper",
+      "passed": true,
+      "source_volume": 503311.07978943083,
+      "snapshot_volume": 503311.07978943083
+    },
+    {
+      "name": "Preserved_Left_Upper",
+      "passed": true,
+      "source_volume": 344070.7366959644,
+      "snapshot_volume": 344070.7366959644
+    },
+    {
+      "name": "Preserved_Right_Upper",
+      "passed": true,
+      "source_volume": 344678.3009122725,
+      "snapshot_volume": 344678.3009122725
+    },
+    {
+      "name": "Preserved_Base",
+      "passed": true,
+      "source_volume": 359034.9027368174,
+      "snapshot_volume": 359034.9027368174
+    },
+    {
+      "name": "Preserved_Top_Lid",
+      "passed": true,
+      "source_volume": 380030.3009122724,
+      "snapshot_volume": 380030.3009122724
+    },
+    {
+      "name": "Preserved_Corner_00_0",
+      "passed": true,
+      "source_volume": 26488.177028497434,
+      "snapshot_volume": 26488.17702849743
+    },
+    {
+      "name": "Preserved_Corner_00_1",
+      "passed": true,
+      "source_volume": 25074.336293856406,
+      "snapshot_volume": 25074.336293856406
+    },
+    {
+      "name": "Preserved_Corner_01_0",
+      "passed": true,
+      "source_volume": 26488.177028497434,
+      "snapshot_volume": 26488.177028497434
+    },
+    {
+      "name": "Preserved_Corner_01_1",
+      "passed": true,
+      "source_volume": 25074.336293856402,
+      "snapshot_volume": 25074.336293856402
+    },
+    {
+      "name": "Preserved_Corner_10_0",
+      "passed": true,
+      "source_volume": 26488.17702849743,
+      "snapshot_volume": 26488.17702849743
+    },
+    {
+      "name": "Preserved_Corner_10_1",
+      "passed": true,
+      "source_volume": 25074.33629385641,
+      "snapshot_volume": 25074.33629385641
+    },
+    {
+      "name": "Preserved_Corner_11_0",
+      "passed": true,
+      "source_volume": 26488.177028497426,
+      "snapshot_volume": 26488.177028497423
+    },
+    {
+      "name": "Preserved_Corner_11_1",
+      "passed": true,
+      "source_volume": 25074.336293856406,
+      "snapshot_volume": 25074.336293856406
+    },
+    {
+      "name": "Preserved_Foot_16_16",
+      "passed": true,
+      "source_volume": 1158.1167158193412,
+      "snapshot_volume": 1158.1167158193412
+    },
+    {
+      "name": "Preserved_Foot_16_134",
+      "passed": true,
+      "source_volume": 1158.1167158193412,
+      "snapshot_volume": 1158.1167158193412
+    },
+    {
+      "name": "Preserved_Foot_224_16",
+      "passed": true,
+      "source_volume": 1158.1167158193414,
+      "snapshot_volume": 1158.1167158193414
+    },
+    {
+      "name": "Preserved_Foot_224_134",
+      "passed": true,
+      "source_volume": 1158.1167158193414,
+      "snapshot_volume": 1158.1167158193414
+    },
+    {
+      "name": "Preserved_Seam_Bridge_Front",
+      "passed": true,
+      "source_volume": 11394.336293856408,
+      "snapshot_volume": 11394.336293856408
+    },
+    {
+      "name": "Preserved_Seam_Bridge_Rear",
+      "passed": true,
+      "source_volume": 11394.336293856408,
+      "snapshot_volume": 11394.336293856408
+    },
+    {
+      "name": "Preserved_Axle_Track_Left",
+      "passed": true,
+      "source_volume": 26062.96109472688,
+      "snapshot_volume": 26062.96109472688
+    },
+    {
+      "name": "Preserved_Axle_Track_Right",
+      "passed": true,
+      "source_volume": 26062.96109472688,
+      "snapshot_volume": 26062.961094726877
+    },
+    {
+      "name": "Preserved_Spool_Axle",
+      "passed": true,
+      "source_volume": 13562.901579274072,
+      "snapshot_volume": 13562.90157927407
+    },
+    {
+      "name": "Preserved_Spool_Bushing_1",
+      "passed": true,
+      "source_volume": 27980.971960315925,
+      "snapshot_volume": 27980.97196031592
+    },
+    {
+      "name": "Preserved_Spool_Bushing_2",
+      "passed": true,
+      "source_volume": 27980.97196031592,
+      "snapshot_volume": 27980.971960315925
+    },
+    {
+      "name": "Preserved_Vent_Shutter_Intake",
+      "passed": true,
+      "source_volume": 1183.9150456136201,
+      "snapshot_volume": 1183.9150456136201
+    },
+    {
+      "name": "Preserved_Vent_Shutter_Exhaust",
+      "passed": true,
+      "source_volume": 1183.9150456136201,
+      "snapshot_volume": 1183.9150456136201
+    },
+    {
+      "name": "Preserved_Filament_Exit_Guide",
+      "passed": true,
+      "source_volume": 346.12682112863286,
+      "snapshot_volume": 346.12682112863297
+    },
+    {
+      "name": "Preserved_Hinge_Frame_60",
+      "passed": true,
+      "source_volume": 2501.077936622619,
+      "snapshot_volume": 2501.077936622619
+    },
+    {
+      "name": "Preserved_Hinge_Lid_60",
+      "passed": true,
+      "source_volume": 1271.319719122016,
+      "snapshot_volume": 1271.319719122016
+    },
+    {
+      "name": "Preserved_Hinge_Frame_180",
+      "passed": true,
+      "source_volume": 2501.077936622618,
+      "snapshot_volume": 2501.077936622618
+    },
+    {
+      "name": "Preserved_Hinge_Lid_180",
+      "passed": true,
+      "source_volume": 1271.3197191220154,
+      "snapshot_volume": 1271.3197191220154
+    },
+    {
+      "name": "Preserved_Latch_Bracket_50",
+      "passed": true,
+      "source_volume": 6858.504440784612,
+      "snapshot_volume": 6858.504440784612
+    },
+    {
+      "name": "Preserved_Lid_Latch_50",
+      "passed": true,
+      "source_volume": 1235.8725684204305,
+      "snapshot_volume": 1235.8725684204305
+    },
+    {
+      "name": "Preserved_Latch_Bracket_190",
+      "passed": true,
+      "source_volume": 6858.504440784612,
+      "snapshot_volume": 6858.504440784611
+    },
+    {
+      "name": "Preserved_Lid_Latch_190",
+      "passed": true,
+      "source_volume": 1235.8725684204305,
+      "snapshot_volume": 1235.8725684204305
+    },
+    {
+      "name": "Preserved_Electronics_Pod",
+      "passed": true,
+      "source_volume": 85160.41058071327,
+      "snapshot_volume": 85160.4105807133
+    },
+    {
+      "name": "Preserved_Electronics_Lid",
+      "passed": true,
+      "source_volume": 30623.490273681713,
+      "snapshot_volume": 30623.490273681717
+    },
+    {
+      "name": "Preserved_Electronics_Carrier",
+      "passed": true,
+      "source_volume": 12423.660182454481,
+      "snapshot_volume": 12423.660182454485
+    },
+    {
+      "name": "Preserved_Pod_Spacer_57_37",
+      "passed": true,
+      "source_volume": 337.7840421139746,
+      "snapshot_volume": 337.78404211397446
+    },
+    {
+      "name": "Preserved_Pod_Spacer_57_89",
+      "passed": true,
+      "source_volume": 337.78404211397446,
+      "snapshot_volume": 337.78404211397446
+    },
+    {
+      "name": "Preserved_Pod_Spacer_179_37",
+      "passed": true,
+      "source_volume": 337.78404211397464,
+      "snapshot_volume": 337.7840421139745
+    },
+    {
+      "name": "Preserved_Pod_Spacer_179_89",
+      "passed": true,
+      "source_volume": 337.7840421139746,
+      "snapshot_volume": 337.7840421139745
+    },
+    {
+      "name": "Preserved_Sensor_Mount_1",
+      "passed": true,
+      "source_volume": 3133.8405684204295,
+      "snapshot_volume": 3133.8405684204304
+    },
+    {
+      "name": "Preserved_Sensor_Mount_2",
+      "passed": true,
+      "source_volume": 1025.9525684204311,
+      "snapshot_volume": 1025.9525684204311
+    },
+    {
+      "name": "Valid_PTC_Lower_Support",
+      "passed": true,
+      "solids": 1,
+      "volume": 8231.235410522584
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Front_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Rear_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Left_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Right_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Front_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Rear_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Left_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Right_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Base",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Top_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_00_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_00_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_01_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_01_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_10_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_10_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_11_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Corner_11_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Foot_16_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Foot_16_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Foot_224_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Foot_224_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Seam_Bridge_Front",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Seam_Bridge_Rear",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Axle_Track_Left",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Axle_Track_Right",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Spool_Axle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Spool_Bushing_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Spool_Bushing_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Vent_Shutter_Intake",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Vent_Shutter_Exhaust",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Filament_Exit_Guide",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Hinge_Frame_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Hinge_Lid_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Hinge_Frame_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Hinge_Lid_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Latch_Bracket_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Lid_Latch_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Latch_Bracket_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Lid_Latch_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Electronics_Pod",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Electronics_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Electronics_Carrier",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Pod_Spacer_57_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Pod_Spacer_57_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Pod_Spacer_179_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Pod_Spacer_179_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Sensor_Mount_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Lower_Support_Sensor_Mount_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Hardware_clear_PTC_Lower_Support_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 12.0
+    },
+    {
+      "name": "Hardware_clear_PTC_Lower_Support_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 6.999999999999986
+    },
+    {
+      "name": "Hardware_clear_PTC_Lower_Support_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 114.34675744127152
+    },
+    {
+      "name": "Valid_PTC_Upper_Support",
+      "passed": true,
+      "solids": 1,
+      "volume": 13367.235410522586
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Front_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Rear_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Left_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Right_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Front_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Rear_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Left_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Right_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Base",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Top_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_00_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_00_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_01_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_01_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_10_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_10_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_11_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Corner_11_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Foot_16_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Foot_16_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Foot_224_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Foot_224_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Seam_Bridge_Front",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Seam_Bridge_Rear",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Axle_Track_Left",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Axle_Track_Right",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Spool_Axle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Spool_Bushing_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Spool_Bushing_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Vent_Shutter_Intake",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Vent_Shutter_Exhaust",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Filament_Exit_Guide",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Hinge_Frame_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Hinge_Lid_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Hinge_Frame_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Hinge_Lid_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Latch_Bracket_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Lid_Latch_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Latch_Bracket_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Lid_Latch_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Electronics_Pod",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Electronics_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Electronics_Carrier",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Pod_Spacer_57_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Pod_Spacer_57_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Pod_Spacer_179_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Pod_Spacer_179_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Sensor_Mount_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_PTC_Upper_Support_Sensor_Mount_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Hardware_clear_PTC_Upper_Support_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 18.343936327844133
+    },
+    {
+      "name": "Hardware_clear_PTC_Upper_Support_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 7.0
+    },
+    {
+      "name": "Hardware_clear_PTC_Upper_Support_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 39.58561477546792
+    },
+    {
+      "name": "Valid_Cup_113_Cradle",
+      "passed": true,
+      "solids": 1,
+      "volume": 21464.43371115312
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Front_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Rear_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Left_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Right_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Front_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Rear_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Left_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Right_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Base",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Top_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_00_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_00_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_01_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_01_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_10_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_10_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_11_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Corner_11_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Foot_16_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Foot_16_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Foot_224_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Foot_224_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Seam_Bridge_Front",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Seam_Bridge_Rear",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Axle_Track_Left",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Axle_Track_Right",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Spool_Axle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Spool_Bushing_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Spool_Bushing_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Vent_Shutter_Intake",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Vent_Shutter_Exhaust",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Filament_Exit_Guide",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Hinge_Frame_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Hinge_Lid_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Hinge_Frame_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Hinge_Lid_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Latch_Bracket_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Lid_Latch_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Latch_Bracket_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Lid_Latch_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Electronics_Pod",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Electronics_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Electronics_Carrier",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Pod_Spacer_57_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Pod_Spacer_57_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Pod_Spacer_179_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Pod_Spacer_179_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Sensor_Mount_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_113_Cradle_Sensor_Mount_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Hardware_clear_Cup_113_Cradle_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 48.50773134254011
+    },
+    {
+      "name": "Hardware_clear_Cup_113_Cradle_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 3.5000000000002203
+    },
+    {
+      "name": "Hardware_clear_Cup_113_Cradle_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.740642945577598
+    },
+    {
+      "name": "Valid_Cup_183_Cradle",
+      "passed": true,
+      "solids": 1,
+      "volume": 21464.43371115332
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Front_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Rear_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Left_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Right_Lower",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Front_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Rear_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Left_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Right_Upper",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Base",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Top_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_00_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_00_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_01_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_01_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_10_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_10_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_11_0",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Corner_11_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Foot_16_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Foot_16_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Foot_224_16",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Foot_224_134",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Seam_Bridge_Front",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Seam_Bridge_Rear",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Axle_Track_Left",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Axle_Track_Right",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Spool_Axle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Spool_Bushing_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Spool_Bushing_2",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Vent_Shutter_Intake",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Vent_Shutter_Exhaust",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Filament_Exit_Guide",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Hinge_Frame_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Hinge_Lid_60",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Hinge_Frame_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Hinge_Lid_180",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Latch_Bracket_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Lid_Latch_50",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Latch_Bracket_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Lid_Latch_190",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Electronics_Pod",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Electronics_Lid",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Electronics_Carrier",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Pod_Spacer_57_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Pod_Spacer_57_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Pod_Spacer_179_37",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Pod_Spacer_179_89",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Sensor_Mount_1",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Existing_clear_Cup_183_Cradle_Sensor_Mount_2",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Hardware_clear_Cup_183_Cradle_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.09184429327303
+    },
+    {
+      "name": "Hardware_clear_Cup_183_Cradle_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 3.5000000000003695
+    },
+    {
+      "name": "Hardware_clear_Cup_183_Cradle_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 20.441181435762555
+    },
+    {
+      "name": "New_parts_clear_PTC_Lower_Support_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "New_parts_clear_PTC_Lower_Support_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "New_parts_clear_PTC_Lower_Support_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "New_parts_clear_PTC_Upper_Support_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "New_parts_clear_PTC_Upper_Support_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "New_parts_clear_Cup_113_Cradle_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 7.105427357601002e-15
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 12.999999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.80038303299337
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 26.000000000000007
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 6.499999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 116.74873167619246
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_M3x10_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_M3x10_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_M3x10_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Cold_M3x10_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_M3x10_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 16.507574019219184
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_M3x10_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 3.499999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Cold_M3x10_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 116.8383420421276
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 7.105427357601002e-15
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 37.499999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 123.22467000742932
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_M3x10_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_M3x10_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_M3x10_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Lower_Hot_M3x10_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_M3x10_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.4999999999999858
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_M3x10_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 28.000055182732005
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Lower_Hot_M3x10_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 122.75260701032599
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 7.105427357601002e-15
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 13.000000000000014
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 43.48082073166722
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 25.999999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 6.500000000000014
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 41.9166430327075
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_M3x10_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_M3x10_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_M3x10_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Cold_M3x10_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_M3x10_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 16.50757401921917
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_M3x10_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 3.500000000000014
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Cold_M3x10_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 41.79322191436498
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 7.105427357601002e-15
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 37.500000000000014
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 51.51996677740512
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_M3x10_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_M3x10_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_M3x10_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Heater_Upper_Hot_M3x10_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_M3x10_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.4999999999999858
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_M3x10_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 28.000055182732034
+    },
+    {
+      "name": "Stock_hardware_clear_Heater_Upper_Hot_M3x10_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 49.85234902964823
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 47.860822910131304
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.800000000000017
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 113.5098182658709
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 46.755906304790784
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.000000000000031
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 111.93162329351149
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 48.12983395656449
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 111.57723034578322
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 54.97490764956061
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 30.80000000000002
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 134.5387115025037
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_M3x12_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_M3x12_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_M3x12_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Front_Cold_M3x12_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_M3x12_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 52.487082372551356
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_M3x12_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 19.300000000000033
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Front_Cold_M3x12_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 126.73957807860046
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 48.18355636536129
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.7999999999999945
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 113.5098182658709
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 47.03494147707541
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.999999999999996
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 111.93162329351149
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 48.26739424535656
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 111.57723034578322
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 59.52448810339488
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 30.799999999999986
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 134.5387115025037
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_M3x12_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_M3x12_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_M3x12_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Rear_Cold_M3x12_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_M3x12_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 55.1753753227709
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_M3x12_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 19.300000000000004
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Rear_Cold_M3x12_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 126.73957807860046
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 50.93792441130321
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 2.799999999999983
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 9.754488266856358
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 49.648766349225646
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.9999999999999858
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 29.723197705517663
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 50.11237372146724
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 24.61674274568078
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Cold_M3x8_CS_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Cold_M3x8_CS_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Cold_M3x8_CS_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Cup_113_Top_Cold_M3x8_CS_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Cold_M3x8_CS_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 57.11646166040154
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Cold_M3x8_CS_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 18.799999999999983
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_113_Top_Cold_M3x8_CS_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.772243815858488
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.47211548794185
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.7999999999999994
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 121.87562391097038
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 116.29703349613007
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.9999999999999993
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.54638796142856
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.39356881873896
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.2847025469429
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.73141179453347
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 30.800000000000004
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 142.36856677406954
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_M3x12_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_M3x12_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_M3x12_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Front_Cold_M3x12_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_M3x12_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.77473522480449
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_M3x12_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 19.30000000000002
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Front_Cold_M3x12_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 134.95844144240326
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.47211548794185
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.7999999999999945
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 121.87562391097038
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 116.29703349613007
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.999999999999994
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.54638796142855
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.39356881873896
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.2847025469429
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 122.85424161977964
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 30.799999999999976
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 142.36856677406956
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_M3x12_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_M3x12_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_M3x12_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Rear_Cold_M3x12_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_M3x12_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 121.96032978804475
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_M3x12_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 19.300000000000004
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Rear_Cold_M3x12_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 134.95844144240323
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_PEEK_20_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_PEEK_20_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_PEEK_20_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_PEEK_20_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_PEEK_20_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.47211548794186
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_PEEK_20_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 2.799999999999997
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_PEEK_20_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 24.230852339882976
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_Washer_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_Washer_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_Washer_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_Washer_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_Washer_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 116.29703349613007
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_Washer_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 2.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_Washer_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 41.85482627411331
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_M3x6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_M3x6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_M3x6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Contact_M3x6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_M3x6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 117.39356881873896
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_M3x6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Contact_M3x6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 38.36143135446159
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Cold_M3x8_CS_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Cold_M3x8_CS_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Cold_M3x8_CS_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Cup_183_Top_Cold_M3x8_CS_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Cold_M3x8_CS_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 122.87206944473483
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Cold_M3x8_CS_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 18.799999999999997
+    },
+    {
+      "name": "Stock_hardware_clear_Cup_183_Top_Cold_M3x8_CS_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 20.91461392546935
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_0_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_0_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_0_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_0_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_0_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 23.50072549388385
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_0_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 33.415788436895504
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_0_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 133.89346528167422
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_0_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_0_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_0_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_0_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_0_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 35.14369877693665
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_0_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 45.67696451196104
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_0_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 157.3155966115788
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_0_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_0_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_0_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_0_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_0_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 24.15221653853034
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_0_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 35.50911168538012
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_0_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 141.20666043748386
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_0_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_0_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_0_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_0_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_0_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 22.962595115754574
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_0_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 34.04486945221018
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_0_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 137.47999061359096
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_1_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_1_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_1_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_1_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_1_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 27.56749479711322
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_1_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 26.46401247470922
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_1_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 131.9776987003531
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_1_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_1_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_1_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_1_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_1_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 37.766905202492
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_1_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 41.13848426920244
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_1_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 155.6376581941965
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_1_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_1_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_1_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_1_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_1_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 27.831441367166324
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_1_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 29.536826406308453
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_1_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 139.41790768298947
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_1_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_1_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_1_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_1_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_1_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 26.749327274618448
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_1_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 27.400864964877726
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_1_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.62670797707665
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_2_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_2_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_2_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_2_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_2_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 29.090962492480074
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_2_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 33.41578843689549
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_2_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 133.89346528167422
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_2_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_2_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_2_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_2_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_2_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 47.06463177083252
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_2_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 45.67696451196101
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_2_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 157.3155966115788
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_2_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_2_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_2_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_2_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_2_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 33.1862857777736
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_2_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 35.50911168538011
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_2_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 141.20666043748386
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_2_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_2_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_2_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_2_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_2_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 30.54964442428219
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_2_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 34.04486945221017
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_2_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 137.47999061359096
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_3_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_3_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_3_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_3_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_3_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 32.464854371902916
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_3_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 26.464012474709193
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_3_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 131.9776987003531
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_3_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_3_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_3_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_3_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_3_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 49.05445065000746
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_3_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 41.13848426920241
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_3_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 155.6376581941965
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_3_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_3_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_3_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_3_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_3_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 35.95259557492361
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_3_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 29.53682640630842
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_3_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 139.41790768298947
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_3_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_3_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_3_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_3_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_3_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 33.489199895558066
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_3_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 27.4008649648777
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_3_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.62670797707665
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_4_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_4_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_4_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_4_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_4_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 49.77981652488142
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_4_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.6172067609712926
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_4_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 127.56504466492808
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_4_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_4_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_4_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_4_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_4_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 55.27344429517667
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_4_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 25.26159701380947
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_4_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 152.0238315798751
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_4_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_4_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_4_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_4_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_4_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 49.02452084673544
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_4_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 8.984511151288231
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_4_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.52546642715402
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_4_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_4_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_4_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_4_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_4_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 48.574065429176855
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_4_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.214442992409618
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_4_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 131.53092263508748
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_5_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_5_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_5_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_5_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_5_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 52.322131836769586
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_5_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.6172067609712784
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_5_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 127.56504466492808
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_5_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_5_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_5_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_5_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_5_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 63.24392610948714
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_5_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 25.261597013809457
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_5_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 152.0238315798751
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_5_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_5_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_5_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_5_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_5_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 53.91196527673611
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_5_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 8.984511151288224
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_5_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.52546642715402
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_5_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_5_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_5_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_5_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_5_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 52.435101147208194
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_5_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.214442992409606
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_5_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 131.53092263508748
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 119.24089238206376
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.6172067609712784
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.4963617188418
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 120.8544054491013
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 25.261597013809443
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 158.7977444937693
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 118.12720819716246
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 8.984511151288217
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 142.75088294494532
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_6_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_6_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_6_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_6_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_6_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 118.13077552036108
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_6_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.214442992409596
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_6_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 138.94923569625075
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_7_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_7_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_7_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_M3x25_7_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_7_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 119.24089238206376
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_7_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0.0,
+      "separation_mm": 1.6172067609712641
+    },
+    {
+      "name": "Stock_hardware_clear_Base_M3x25_7_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 135.4963617188418
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_7_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_7_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_7_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Lower_Washer_7_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_7_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 124.16681393375387
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_7_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 25.261597013809443
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Lower_Washer_7_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 158.7977444937693
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_7_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_7_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_7_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Upper_Washer_7_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_7_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 119.03011409459461
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_7_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 8.984511151288203
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Upper_Washer_7_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 142.75088294494532
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_7_PTC_Lower_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_7_PTC_Upper_Support",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_7_Cup_113_Cradle",
+      "passed": true,
+      "overlap_mm3": 0
+    },
+    {
+      "name": "Stock_clear_Base_Locknut_7_Cup_183_Cradle",
+      "passed": true,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_7_PTC_Heater_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 118.41326081730911
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_7_Steel_Deflector_Reference",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 5.2144429924096
+    },
+    {
+      "name": "Stock_hardware_clear_Base_Locknut_7_Spool_Envelope_UNMEASURED",
+      "passed": true,
+      "overlap_mm3": 0,
+      "separation_mm": 138.94923569625075
+    },
+    {
+      "name": "Base_axis_68_21_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_21_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_21_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_21_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_21_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_21_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_21_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_21_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_21_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_21_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_129_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_129_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_129_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_129_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_68_129_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_129_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_129_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_129_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_129_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_78_129_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_61_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_61_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_61_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_61_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_61_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_89_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_89_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_89_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_89_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_113_89_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_61_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_61_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_61_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_61_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_61_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_89_Base_Existing",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_89_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_89_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_89_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Base_axis_183_89_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Heater_screw_metal_gap",
+      "passed": true,
+      "gap_mm": 11.5
+    },
+    {
+      "name": "Cup_bottom_screw_metal_gap",
+      "passed": true,
+      "gap_mm": 11.3
+    },
+    {
+      "name": "Cup_top_screw_metal_gap",
+      "passed": true,
+      "gap_mm": 10.8
+    },
+    {
+      "name": "No_partition_or_fabricated_bands",
+      "passed": true
+    },
+    {
+      "name": "Four_integrated_prints",
+      "passed": true,
+      "count": 4
+    },
+    {
+      "name": "Flush_print_face_PTC_Lower_Support",
+      "passed": true,
+      "outer_x": 88.0
+    },
+    {
+      "name": "Flush_print_face_PTC_Upper_Support",
+      "passed": true,
+      "outer_x": 88.0
+    },
+    {
+      "name": "Cup_base_end_loading_Cup_113_Cradle",
+      "passed": true,
+      "sampled_positions": 26,
+      "held_above_seats_mm": 1,
+      "maximum_overlap_mm3": 0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_113_1",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_113_0.5",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_113_0",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Top_contact_axial_installation_Cup_113",
+      "passed": true,
+      "sampled_positions": 13,
+      "maximum_overlap_mm3": 0
+    },
+    {
+      "name": "Cup_base_end_loading_Cup_183_Cradle",
+      "passed": true,
+      "sampled_positions": 12,
+      "held_above_seats_mm": 1,
+      "maximum_overlap_mm3": 0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_183_1",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_183_0.5",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Cup_lower_into_seats_Cup_183_0",
+      "passed": true,
+      "maximum_overlap_mm3": 0.0
+    },
+    {
+      "name": "Top_contact_axial_installation_Cup_183",
+      "passed": true,
+      "sampled_positions": 13,
+      "maximum_overlap_mm3": 0
+    },
+    {
+      "name": "Printable_PTC_Lower_Support",
+      "passed": true
+    },
+    {
+      "name": "Printable_PTC_Upper_Support",
+      "passed": true
+    },
+    {
+      "name": "Printable_Cup_113_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Printable_Cup_183_Cradle",
+      "passed": true
+    },
+    {
+      "name": "Source_file_unchanged_cad/assembly/MYMS_Prototype.FCStd",
+      "passed": true
+    },
+    {
+      "name": "Source_file_unchanged_cad/assembly/Hardware_References.FCStd",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "No thermal or airflow simulation/validation",
+    "Real cup perforations absent from reference",
+    "Actual stock hardware dimensions, PEEK ratings, clamp grip and source availability require verification"
+  ]
+}

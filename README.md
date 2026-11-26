@@ -4,7 +4,9 @@ Single-spool filament dryer / feed box, designed in FreeCAD 1.1.4 for printed AB
 
 For future agents and project context, start with [AGENTS.md](AGENTS.md) and the short [current project handover](docs/PROJECT_STATE.md). Load the linked topic documents as needed; the original planning handover is retained as a marked historical snapshot.
 
-**Current release: mechanical review prototype.** The enclosure, spool mechanism, vent controls, filament guide, and electronics pod have native editable sketch/pad/pocket trees and individual STL exports. Heater mounting and cup saddles are proposed **metal/ceramic hardware**, not ABS print files. Their material selection, fabrication, and thermal performance remain unresolved. Do not energize this assembly until those are resolved and the independent cutoff is fitted and tested.
+**Current release: mechanical review prototype.** The enclosure, spool mechanism, vent controls, filament guide, and electronics pod have native editable sketch/pad/pocket trees and individual STL exports. The separate heater/cup retrofit adds **four printed supports** around purchased heat-resistant interfaces and stock fasteners. Interface sourcing, actual fit and thermal performance remain unresolved. Do not energize this assembly until those are resolved and the independent cutoff is fitted and tested.
+
+The owner has now printed all `Printed_Assembly` parts. A separate [mounting retrofit](docs/MOUNTING_RETROFIT.md) preserves them and provides four integrated printed supports around purchased PEEK spacers, avoiding fabricated metal bands/partition. Open [MYMS_Mounting_Retrofit.FCStd](cad/assembly/MYMS_Mounting_Retrofit.FCStd) to review it. Geometry checks pass; hardware procurement, cold fit and thermal/airflow validation remain outstanding.
 
 ![Lid open](docs/lid-open.png)
 
@@ -33,3 +35,5 @@ The chamber has 10 mm side panels, base and lid, with a 240 × 150 mm exterior f
 The [ESP32-C3 firmware](firmware) now includes a PlatformIO/VS Code workspace, local live admin, hysteresis control, device CSV sessions and a computer recorder. Open [myms.code-workspace](myms.code-workspace) and follow the [firmware guide](docs/FIRMWARE.md). Start with the simulation or default monitoring build: nothing is wired yet, and physical outputs are disabled in both. The software compiles but has not been uploaded or physically tested; no complete electrical design, thermal certification or measured drying performance is included.
 
 Shell dimensions describe the current layout; some mounting coordinates depend on this layout and need review when resizing the shell. Spool size, bore, journal clearance, and exit diameter are the intended fit adjustments. The build validates geometry after regeneration.
+
+The [electrical schematic and passive-component guide](docs/ELECTRICAL_SCHEMATIC.md) covers the existing LM2596, 24 V heater/fan, two MOSFET modules, sensor pull-up/decoupling and a proposed 5 V trigger buffer. It distinguishes required parts from optional capacitors and unverified module/fuse details; it is not a tested electrical build.

@@ -33,6 +33,8 @@ The source reference contains two valid single-solid bodies: `Body` / `MetalDiff
 
 ## Commands and environment
 
+For the **supplemental mounting retrofit**, use `bash scripts/build_mounting_retrofit.sh`. It reads/preserves the existing main CAD and creates only the new document, supplemental exports and previews. `bash scripts/build_mounting_retrofit.sh scripts/verify_mounting_retrofit.py` checks native reopening/recompute, saved GUI visibility and unchanged source hashes. See [MOUNTING_RETROFIT.md](MOUNTING_RETROFIT.md). Its four integrated bodies and 820 geometric/assembly checks are separate from the original 52 parts/86 mechanism checks below.
+
 Owner environment: Ubuntu 24.04, FreeCAD 1.1.4 AppImage with bundled Python 3.11; host Python is different and may not import FreeCAD. Default image path is `/home/heits/tools/freecad`.
 
 ```bash

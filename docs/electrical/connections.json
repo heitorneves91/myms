@@ -1,0 +1,59 @@
+{
+  "revision": "A",
+  "date": "2026-11-26",
+  "status": "MODULE-LEVEL PROPOSAL; not a PCB netlist or verified build",
+  "owner_confirmed": {
+    "supply_v": 24,
+    "supply_nameplate_a": 10,
+    "heater_nameplate_w": 120,
+    "fan_supply_v": 24,
+    "mosfet_signal_labels": ["TRIG/PWM", "GND"],
+    "buck": "Purchased LM2596 module, adjustable 24 V to measured 5.0 V"
+  },
+  "assumptions": [
+    "Two separate active-HIGH, low-side D4184-type modules with common VIN-/signal GND and common VIN+/OUT+",
+    "Confirm actual power terminal labels and 5 V TRIG tolerance; board photo/model not supplied",
+    "U4 TC4427A is a proposed addition, not purchased hardware; 8-pin PDIP/SOIC/MSOP pin numbers",
+    "ESP32 SuperMini 5V/USB backfeed behavior not verified; open JP1 when USB supplies power",
+    "Fan current and PTC inrush unknown; fuse ratings and D1 final selection remain open",
+    "TH1 selection explicitly deferred; no bypass connection is supplied"
+  ],
+  "firmware_pins": {"sensor": 4, "heater": 5, "fan": 6},
+  "nets": {
+    "24V_INPUT": ["PSU1.+", "F0.1"],
+    "24V_FUSED": ["F0.2", "S1.1"],
+    "+24V_BUS": ["S1.2", "TH1.1", "F1.1", "F2.1", "C6.+"],
+    "HEATER_POS": ["TH1.2", "U2.VIN+", "U2.OUT+", "HEATER.+"],
+    "SW_HEAT": ["U2.OUT-", "HEATER.-"],
+    "FAN_POS": ["F2.2", "U3.VIN+", "U3.OUT+", "FAN.+", "D1.K"],
+    "SW_FAN": ["U3.OUT-", "FAN.-", "D1.A"],
+    "LOGIC_INPUT": ["F1.2", "U1.IN+"],
+    "+5V_EXT": ["U1.OUT+", "JP1.1", "C5.+"],
+    "+5V_BOARD": ["JP1.2", "ESP.5V", "U4.6", "C3.1", "C4.1"],
+    "+3V3": ["ESP.3V3", "TEMP1.3", "TEMP2.3", "R1.1", "C1.1", "C2.1"],
+    "DQ_BUS": ["ESP.GPIO4", "TEMP1.2", "TEMP2.2", "R1.2"],
+    "GPIO_HEAT": ["ESP.GPIO5", "U4.2", "R2.1"],
+    "GPIO_FAN": ["ESP.GPIO6", "U4.4", "R3.1"],
+    "DRIVE_HEAT": ["U4.7", "R4.1"],
+    "DRIVE_FAN": ["U4.5", "R5.1"],
+    "HEAT_TRIG": ["R4.2", "U2.TRIG/PWM", "R6.1"],
+    "FAN_TRIG": ["R5.2", "U3.TRIG/PWM", "R7.1"],
+    "GND": ["PSU1.-", "U1.IN-", "U1.OUT-", "U2.VIN-", "U2.signal_GND", "U3.VIN-", "U3.signal_GND", "ESP.GND", "U4.3", "TEMP1.1", "TEMP2.1", "R2.2", "R3.2", "R6.2", "R7.2", "C1.2", "C2.2", "C3.2", "C4.2", "C5.-", "C6.-"]
+  },
+  "no_connect": ["U4.1", "U4.8"],
+  "components": [
+    {"refs": ["R1"], "value": "4.7 kohm", "status": "required external 1-Wire pull-up", "power_w": 0.25},
+    {"refs": ["R2", "R3"], "value": "10 kohm", "status": "required input default-low bias in buffered version", "power_w": 0.25},
+    {"refs": ["R4", "R5"], "value": "100 ohm", "status": "proposed series output resistors; existing module resistors may make them redundant", "power_w": 0.25},
+    {"refs": ["R6", "R7"], "value": "10 kohm", "status": "recommended module-input bias; redundant if adequate internal pull-down verified", "power_w": 0.25},
+    {"refs": ["C1", "C2"], "value": "100 nF", "rating_min_v": 10, "status": "recommended local sensor decoupling; not required for basic short-wire 1-Wire communication"},
+    {"refs": ["C3"], "value": "100 nF", "rating_min_v": 10, "status": "required local U4 supply bypass if buffer installed"},
+    {"refs": ["C4"], "value": "4.7 uF", "rating_min_v": 10, "status": "local U4 reservoir if buffer installed; ceramic preferred"},
+    {"refs": ["C5"], "value": "220 uF", "rating_min_v": 16, "status": "optional polarized bulk on external 5 V side, before JP1; check LM2596 output network"},
+    {"refs": ["C6"], "value": "100 uF", "rating_min_v": 50, "status": "optional polarized 24 V bus reservoir; inspect installed capacitors and wiring first"},
+    {"refs": ["U4"], "value": "TC4427A non-inverting dual driver", "status": "proposed 5 V trigger buffer; omit only after verifying exact module at 3.3 V", "supply_v": 5},
+    {"refs": ["D1"], "value": "SB560 candidate, Schottky 5 A / 60 V", "status": "fan turn-off clamp provision; verify actual fan startup/stall/transient specs and built-in suppression"},
+    {"refs": ["F0", "F1", "F2"], "value": "TBD", "status": "DC-rated protection selected from startup current, wire and connector limits"},
+    {"refs": ["TH1"], "value": "NC independent heater cutoff; trip and DC rating TBD", "status": "selection deferred; heater branch only"}
+  ]
+}

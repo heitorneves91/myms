@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """Record MYMS status to computer CSV using only the Python standard library."""
 import argparse
-import base64
 import csv
 from datetime import datetime, timezone
-import getpass
 import json
 import math
-import os
 from pathlib import Path
 import time
 import urllib.error
@@ -20,15 +17,13 @@ FIELDS = ["schema", "computer_utc", "device_id", "device_utc_s", "uptime_s",
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
-    # Do not forward the device password to a different host.
+    # Keep recording tied to the configured device instead of following redirects.
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         return None
 
 
-def fetch_status(url, password, timeout=5):
-    credentials = base64.b64encode(("admin:" + password).encode()).decode()
-    request = urllib.request.Request(url.rstrip("/") + "/api/status",
-                                    headers={"Authorization": "Basic " + credentials})
+def fetch_status(url, timeout=5):
+    request = urllib.request.Request(url.rstrip("/") + "/api/status")
     with urllib.request.build_opener(NoRedirect).open(request, timeout=timeout) as response:
         status = json.load(response)
     if not isinstance(status, dict) or "device_id" not in status or "recording" not in status:
@@ -61,10 +56,9 @@ def main():
         parser.error("Use a base HTTP(S) URL without embedded credentials, path, query or fragment")
     if not math.isfinite(args.interval) or args.interval < 1 or not math.isfinite(args.duration) or args.duration < args.interval:
         parser.error("Interval must be >=1 second and duration >= interval, with finite values")
-    password = os.environ.get("MYMS_PASSWORD") or getpass.getpass("MYMS admin password: ")
-    # Check credentials/endpoint before creating a file. A later disconnect writes a gap row.
+    # Check the endpoint before creating a file. A later disconnect writes a gap row.
     try:
-        first = fetch_status(args.url, password)
+        first = fetch_status(args.url)
     except (OSError, ValueError) as exc:
         parser.exit(1, f"Cannot connect: {exc}\n")
     root = Path(__file__).resolve().parents[1]
@@ -85,13 +79,13 @@ def main():
                 if time.monotonic() >= deadline:
                     break
                 try:
-                    status = first if rows == 0 else fetch_status(args.url, password, timeout=min(5, args.interval))
+                    status = first if rows == 0 else fetch_status(args.url, timeout=min(5, args.interval))
                     row = row_for(status)
                 except urllib.error.HTTPError as exc:
                     row = row_for(error=f"HTTP {exc.code}")
                     if exc.code in (401, 403):
                         writer.writerow(row)
-                        print("Authentication rejected; stopping.")
+                        print("Device rejected the request; stopping.")
                         break
                 except (OSError, ValueError) as exc:
                     row = row_for(error=str(exc))

@@ -20,10 +20,10 @@ constexpr bool OUTPUTS = MYMS_OUTPUTS_ENABLED && !SIM;
 constexpr bool CONTROL = OUTPUTS || SIM;
 constexpr size_t MAX_SENSORS = 8, MAX_FILE = 512 * 1024, MAX_STORAGE = 1536 * 1024;
 constexpr size_t MAX_SESSIONS = 24;
-const char* VERSION = "0.1.0";
-// Owner-requested memorable password, shared by the device AP and local admin.
-constexpr char DEVICE_PASSWORD[] = "myms1234";
-static_assert(sizeof(DEVICE_PASSWORD) >= 9 && sizeof(DEVICE_PASSWORD) <= 64,
+const char* VERSION = "0.4.0";
+// Owner-requested Wi-Fi password. The admin page/API intentionally has no login.
+constexpr char AP_PASSWORD[] = "myms1234";
+static_assert(sizeof(AP_PASSWORD) >= 9 && sizeof(AP_PASSWORD) <= 64,
               "Wi-Fi password must contain 8-63 characters");
 WebServer server(80);
 Preferences prefs;
@@ -33,7 +33,7 @@ Controller controller;
 Sample sample;
 SemaphoreHandle_t controlMutex;
 DeviceAddress addresses[MAX_SENSORS];
-String roms[MAX_SENSORS], airRom, wallRom, password, deviceId, ssid;
+String roms[MAX_SENSORS], airRom, wallRom, deviceId, ssid;
 float readings[MAX_SENSORS];
 size_t sensorCount = 0;
 bool fsReady = false;
@@ -98,13 +98,9 @@ void controlTask(void*) {
     vTaskDelay(pdMS_TO_TICKS(20));
   }
 }
-bool authorize(bool mutation = false) {
-  if (!server.authenticate("admin", password.c_str())) {
-    server.requestAuthentication(BASIC_AUTH, "MYMS");
-    return false;
-  }
-  // Custom header blocks cross-origin HTML forms; no CORS access is granted.
-  if (mutation && server.header("X-MYMS-Request") != "1") {
+bool checkMutation() {
+  // Retain cross-origin form protection without requiring an admin login.
+  if (server.header("X-MYMS-Request") != "1") {
     server.send(403, "application/json", "{\"error\":\"Missing X-MYMS-Request header\"}");
     return false;
   }
@@ -156,7 +152,10 @@ void fillStatus(JsonDocument& doc) {
     doc["sensor_age_ms"] = now - sample.at;
     doc["air_rom"] = airRom;
     doc["wall_rom"] = wallRom;
-    doc["target_c"] = controller.target;
+    if (controller.testMode()) doc["target_c"] = nullptr;
+    else doc["target_c"] = controller.target;
+    doc["heater_test_limit_s"] = Controller::HEATER_TEST_MS / 1000;
+    doc["heater_test_remaining_s"] = controller.testRemaining(now);
     doc["remaining_s"] = controller.remaining(now);
     doc["heater"] = controller.heater;
     doc["fan"] = controller.fan;
@@ -185,10 +184,11 @@ String csvRow() {
   String utc = status["utc_s"].isNull() ? "" : status["utc_s"].as<String>();
   String air = status["air_c"].isNull() ? "" : String(status["air_c"].as<float>(), 3);
   String wall = status["wall_c"].isNull() ? "" : String(status["wall_c"].as<float>(), 3);
-  snprintf(row, sizeof(row), "1,%s,%s,%s,%llu,%lu,%s,%s,%s,%.2f,%d,%d,%s,%d\n",
+  String target = status["target_c"].isNull() ? "" : String(status["target_c"].as<float>(), 2);
+  snprintf(row, sizeof(row), "1,%s,%s,%s,%llu,%lu,%s,%s,%s,%s,%d,%d,%s,%d\n",
     deviceId.c_str(), recordingName.c_str(), utc.c_str(),
     (unsigned long long)(esp_timer_get_time() / 1000), (unsigned long)(millis() - logStarted),
-    air.c_str(), wall.c_str(), status["state"].as<const char*>(), status["target_c"].as<float>(),
+    air.c_str(), wall.c_str(), status["state"].as<const char*>(), target.c_str(),
     status["heater"].as<bool>(), status["fan"].as<bool>(), status["fault"].as<const char*>(), SIM);
   return row;
 }
@@ -229,12 +229,10 @@ void routes() {
   const char* headers[] = {"X-MYMS-Request"};
   server.collectHeaders(headers, 1);
   server.on("/", HTTP_GET, [] {
-    if (!authorize()) return;
     server.sendHeader("Cache-Control", "no-store");
     server.send_P(200, "text/html", WEB_UI);
   });
   server.on("/api/status", HTTP_GET, [] {
-    if (!authorize()) return;
     StaticJsonDocument<4096> doc;
     fillStatus(doc);
     String json;
@@ -243,7 +241,7 @@ void routes() {
     server.send(200, "application/json", json);
   });
   server.on("/api/start", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
     if (!doc["target_c"].is<float>() || !doc["duration_s"].is<uint32_t>()) { replyError(400, "Numeric target and integer duration required"); return; }
@@ -255,18 +253,37 @@ void routes() {
     if (error) replyError(409, error); else ok();
   });
   server.on("/api/stop", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     { Guard guard; controller.stop(millis()); drive(controller.heater, controller.fan); }
     ok();
   });
+  server.on("/api/manual", HTTP_POST, [] {
+    if (!checkMutation()) return;
+    StaticJsonDocument<1024> doc;
+    if (!body(doc)) return;
+    String mode = doc["mode"] | "";
+    if (mode != "fan" && mode != "heat" && mode != "test-heat") { replyError(400, "Mode must be fan, heat or test-heat"); return; }
+    if (mode == "heat" && !doc["target_c"].is<float>()) { replyError(400, "Numeric target required for manual heat"); return; }
+    const char* error;
+    {
+      Guard guard;
+      if (mode == "fan") error = controller.manualFan(millis(), CONTROL);
+      else if (mode == "test-heat") error = controller.testHeat(millis(), sample, CONTROL);
+      else error = controller.manualHeat(millis(), sample, doc["target_c"], CONTROL);
+      // Stop heat immediately when switching to fan/cooldown; never write a
+      // raw output override that bypasses the controller task.
+      drive(controller.heater, controller.fan);
+    }
+    if (error) replyError(409, error); else ok();
+  });
   server.on("/api/reset-fault", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     bool reset;
     { Guard guard; reset = controller.reset(millis(), sample); }
     if (reset) ok(); else replyError(409, "Fault reset requires fresh sensors at or below 35 C");
   });
   server.on("/api/sensors", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     if (!idle()) { replyError(409, "Stop and cool down before changing sensor roles"); return; }
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
@@ -283,7 +300,7 @@ void routes() {
     ok();
   });
   server.on("/api/clock", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
     if (!doc["utc_s"].is<int64_t>()) { replyError(400, "Integer UTC epoch required"); return; }
@@ -294,7 +311,7 @@ void routes() {
     ok();
   });
   server.on("/api/wifi", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     if (!idle() || recording) { replyError(409, "Wi-Fi changes require idle controller and stopped recording"); return; }
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
@@ -306,7 +323,7 @@ void routes() {
     ok();
   });
   server.on("/api/record/start", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     if (!fsReady || recording) { replyError(409, "Initialize storage first; only one recording at a time"); return; }
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
@@ -327,9 +344,8 @@ void routes() {
     logStarted = millis(); logLast = logStarted - logInterval;
     recordTick(); ok();
   });
-  server.on("/api/record/stop", HTTP_POST, [] { if (authorize(true)) { closeRecording(); ok(); } });
+  server.on("/api/record/stop", HTTP_POST, [] { if (checkMutation()) { closeRecording(); ok(); } });
   server.on("/api/files", HTTP_GET, [] {
-    if (!authorize()) return;
     DynamicJsonDocument doc(8192);
     JsonArray files = doc.createNestedArray("files");
     if (fsReady) {
@@ -349,7 +365,6 @@ void routes() {
     String json; serializeJson(doc, json); server.send(200, "application/json", json);
   });
   server.on("/api/file", HTTP_GET, [] {
-    if (!authorize()) return;
     String path = server.arg("name");
     if (!fsReady || !csvPath(path) || !LittleFS.exists(path)) { replyError(404, "CSV not found"); return; }
     if (recording) { replyError(409, "Stop recording before downloading files to avoid gaps in the CSV"); return; }
@@ -359,7 +374,7 @@ void routes() {
     file.close();
   });
   server.on("/api/file/delete", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
     String path = doc["name"] | "";
@@ -368,7 +383,7 @@ void routes() {
     if (LittleFS.remove(path)) ok(); else replyError(500, "Delete failed");
   });
   server.on("/api/storage/initialize", HTTP_POST, [] {
-    if (!authorize(true)) return;
+    if (!checkMutation()) return;
     if (!idle() || recording || fsReady) { replyError(409, "Initialization only allowed for unmounted storage while idle"); return; }
     StaticJsonDocument<1024> doc;
     if (!body(doc)) return;
@@ -394,7 +409,6 @@ void setup() {
   uint64_t mac = ESP.getEfuseMac();
   char id[13]; snprintf(id, sizeof(id), "%012llx", (unsigned long long)mac);
   deviceId = id; ssid = "MYMS-" + deviceId.substring(6);
-  password = DEVICE_PASSWORD;
   airRom = prefs.getString("air_rom", ""); wallRom = prefs.getString("wall_rom", "");
   if (SIM) {
     sensorCount = 2; roms[0] = "2800000000000001"; roms[1] = "2800000000000002";
@@ -412,15 +426,15 @@ void setup() {
   for (size_t i = 0; i < MAX_SENSORS; i++) readings[i] = NAN;
   fsReady = LittleFS.begin(false);  // Never silently format existing measurement data.
   if (!fsReady) recordingError = "Storage uninitialized or cannot mount; initialize explicitly in admin";
-  WiFi.softAP(ssid.c_str(), password.c_str());
+  WiFi.softAP(ssid.c_str(), AP_PASSWORD);
   String network = prefs.getString("wifi_ssid", "");
   if (network.length()) WiFi.begin(network.c_str(), prefs.getString("wifi_key", "").c_str());
   if (xTaskCreate(controlTask, "myms-control", 4096, nullptr, 2, nullptr) != pdPASS) {
     drive(false, false); abort();
   }
   routes(); server.begin();
-  Serial.printf("\nMYMS %s | %s | %s\nAP: %s | http://192.168.4.1\nUser: admin | AP/admin password: %s\n",
-    VERSION, SIM ? "SIMULATION" : (OUTPUTS ? "DRYER" : "MONITOR: outputs disabled"), deviceId.c_str(), ssid.c_str(), password.c_str());
+  Serial.printf("\nMYMS %s | %s | %s\nAP: %s | http://192.168.4.1\nWi-Fi password: %s | Admin: no login\n",
+    VERSION, SIM ? "SIMULATION" : (OUTPUTS ? "DRYER" : "MONITOR: outputs disabled"), deviceId.c_str(), ssid.c_str(), AP_PASSWORD);
   Serial.println("Type 'info' then Enter to repeat connection details. Sensors discovered only at boot.");
 }
 void loop() {
@@ -430,7 +444,7 @@ void loop() {
     static String command;
     char c = Serial.read();
     if (c == '\n' || c == '\r') {
-      if (command == "info") Serial.printf("AP %s http://192.168.4.1 | admin / %s\n", ssid.c_str(), password.c_str());
+      if (command == "info") Serial.printf("AP %s http://192.168.4.1 | Wi-Fi password: %s | Admin: no login\n", ssid.c_str(), AP_PASSWORD);
       command = "";
     } else if (command.length() < 32) command += c;
   }
